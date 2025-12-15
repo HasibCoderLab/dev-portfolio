@@ -8,3 +8,10 @@
   --breakpoint-3xl:1920px;
   --color-primary:#8DFF69
 }
+
+@layer base{
+  html{
+    font-family: var(--font-dispaly);
+    scroll-behavior: smooth;
+  }
+}
