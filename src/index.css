@@ -24,11 +24,11 @@
   }
 
   /* ===== custom scrollbar ======= */
-  ::--webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
   }
 
-  ::--webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: #0a0a0a0a;
   }
 
@@ -39,13 +39,12 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #7dfc3d, #5bc92e);
-
   }
 
   /* ===== FireFox scrollbar ======= */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #6FE047  #0a0a0a;
+    scrollbar-color: #6FE047 #0a0a0a;
   }
 
   /* ===== Hide scrollbar  for carousel ======= */
