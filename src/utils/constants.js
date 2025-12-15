@@ -10,7 +10,17 @@
 
 
 
+export const  STATS= [
+        {  label:"Years Experiences" , value:"2+"},
+        {  label:"Projects Complated " , value:"80+"},
+        {  label:"Technologies" , value:""},
+        {  label:"" , value:""},
+        
 
+
+       
+
+    ] 
 
 
 
