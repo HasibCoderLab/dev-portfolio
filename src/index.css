@@ -66,7 +66,7 @@
       opacity: 1;
     }
   }
-   @keyframes fedeIn {
+   @keyframes pulse {
     0%,100%{
       opacity: 0.3;
     }
@@ -75,5 +75,26 @@
     }
   }
 
-  
+  /* ======= Utility Classes =========  */
+.animate-fedeIn{
+  animation: fedeIn 0.5s ease-out;
+}
+
+.animate-pulse{
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-spin-slow{
+  animation:spin 8s linear infinite;
+}
+@keyframes spin {
+  from{
+transform: rotate(0deg);
+  }
+  to{
+transform: rotate(360deg);
+
+  }
+}
+
 } 
