@@ -29,7 +29,9 @@ export const useScrollReveal = (options = {}) => {
     observer.observe(element);
 
     return () => {
-      observer.disconnect();
+      if (element) {
+        observer.unobserve(element)
+      }
     };
   }, [threshold, rootMargin]);
 
