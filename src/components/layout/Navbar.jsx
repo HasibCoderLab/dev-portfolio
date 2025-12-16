@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='flex items-center justify-between'>
 
           {/*  {logo } */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center   gap-4">
 
             <Code className="w-6 h-6 text-primary" />
             <button
@@ -47,7 +47,7 @@ const Navbar = () => {
             </button>
           </div>
           {/* DESKTOP Navigation */}
-          <nav className=''>
+          <nav className='hidden md:flex items-center gap-7'>
             {NAV_LINKS.map(link => (
               <button
                 key={link.id}
@@ -64,13 +64,23 @@ const Navbar = () => {
           </nav>
           {/* CAT Button */}
 
-          <div className="">
+          <div className="hidden md:flex items-center gap-2">
 
             <button
               onClick={() => handleNavClick('contact')}
+           className="px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300"
+
             >Hire Me
             </button>
           </div>
+          {/* Mobile Menu */}
+          <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className=""
+              aria-label="menu"
+            >
+              {isMenuOpen ? <X className='' /> :  <Menu className='' />}
+            </button>
         </div>
       </div>
     </nav>
