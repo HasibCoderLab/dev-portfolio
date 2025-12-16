@@ -62,7 +62,16 @@ const Navbar = () => {
               </button>
             })}
           </nav>
+          {/* CAT Button */}
 
+          <div className="">
+
+            <button
+              onClick={()  => handleNavClick('contact') }
+            >Hire Me
+            </button>
+          </div>
           )
+
 
           export default Navbar;
