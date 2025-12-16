@@ -23,7 +23,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="Navbar"></div>
+    <div className="Navbar">Navbar</div>
   )
 }
 
