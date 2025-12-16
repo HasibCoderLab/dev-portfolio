@@ -67,11 +67,15 @@ const Navbar = () => {
           <div className="">
 
             <button
-              onClick={()  => handleNavClick('contact') }
+              onClick={() => handleNavClick('contact')}
             >Hire Me
             </button>
           </div>
-          )
+        </div>
+      </div>
+    </nav>
+  )
+}
 
 
-          export default Navbar;
+export default Navbar;
