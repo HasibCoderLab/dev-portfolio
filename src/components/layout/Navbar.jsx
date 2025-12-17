@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden  text-white hover:text-white/80 transition-colors "
+            className="md:hidden  text-white hover:text-white/80 transition-colors cursor-pointer "
             aria-label="menu"
             aria-expanded={isMenuOpen}
 
@@ -90,7 +90,7 @@ const Navbar = () => {
         className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-95 opacity-100" : "max-h-0 opacity-0"
           }`}
       >
-        <div className='bg-black/95 backdrop-blur-lg border-t  border-white' >
+        <div className='bg-black/95 backdrop-blur-lg border-t  border-white/10 px-5 py-6 space-y-3' >
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
@@ -106,7 +106,7 @@ const Navbar = () => {
 
           <button
             onClick={() => handleNavClick('contact')}
-            className=''
+            className='w-full px-7 py-3.5  bg-white text-[#212121] font-medium text-base rounded-[17px] border  border-white hover:bg-white/90 duration-300 mt-2 cursor-pointer '
           >
             Hire Me
           </button>
