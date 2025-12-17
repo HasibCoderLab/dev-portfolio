@@ -87,19 +87,33 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-95 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div
-          className="">
-          {
-            NAV_LINKS.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNavClick(link.id)}
-                className={`block w-full text-left px-4 py-3 rounded-lg  font-medium transition-all duration-300 ${activeSection===link.id} ? text-white bg-white/70 hover:text-white  hover:bg-white/50`}
-                            ))
-          }
+        className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-95 opacity-100" : "max-h-0 opacity-0"
+          }`}
+      >
+        <div className='' >
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => handleNavClick(link.id)}
+              className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.id
+                  ? "text-white bg-white/70 hover:bg-white/50"
+                  : "text-gray-300 hover:text-white hover:bg-white/20"
+                }`}
+            >
+              {link.label}
+            </button>
+          ))}
+
+          <button
+            onClick={() => handleNavClick('contact')}
+            className=''
+          >
+            Hire Me
+          </button>
+
         </div>
       </div>
+
     </nav>
   )
 }
