@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import { siReact, siNextdotjs, SiTailwindcss, siNodedotjs, siMongodb } from "react-icons/si";
+// import React, { useState } from 'react'
+import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
+import { Star } from "lucide-react";
 import { PERSONAL_INFO, STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
-import { FadeIn } from "../animations/FadeIn";
-import { RadialGradientBackground } from "../background/RadialGradientBackground";
+import FadeIn from "../animations/FadeIn";
+import  RadialGradientBackground  from "../background/RadialGradientBackground";
 const Hero = () => {
-  useState
+  
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black ">
       <RadialGradientBackground variant="hero" />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="">
+          <div className="text-left">
             <FadeIn delay={0}>
               <div className="">
                 <Star className="" />
