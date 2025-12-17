@@ -95,7 +95,7 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.id
+              className={`block w-full text-left px-4 py-3 cursor-pointer rounded-lg font-medium transition-all duration-300  ${activeSection === link.id
                   ? "text-white bg-white/70 hover:bg-white/50  cursor-pointer"
                   : "text-gray-300 hover:text-white hover:bg-white/20"
                 }`}
