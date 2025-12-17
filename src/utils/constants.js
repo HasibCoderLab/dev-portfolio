@@ -2,7 +2,7 @@ export const PERSONAL_INFO = {
   name: "Mohammad Hasib Hasan",
   title: "Frontend Developer",
   email: "coder.mohammadhasibhasan@gmail.com",
-  location: "Rajshahi,Bangladesh",
+  location: "Rajshahi, Bangladesh",
   tagline: "Building modern, fast, and user-friendly web experiences",
   bio: [
     "Frontend Developer passionate about modern web technologies.",
