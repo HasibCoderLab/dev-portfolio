@@ -25,13 +25,13 @@ const Hero = () => {
               </div>
             </FadeIn>
             <FadeIn delay={100}>
-              <h1 className="">
-                Nex.js Developer
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
+                Next.js Developer
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <p className="">
+              <p className="text-lg text-white/70 max-w-[550px] mb-8">
                 Building modern, scalable web applications with
               </p>
             </FadeIn>
@@ -39,9 +39,10 @@ const Hero = () => {
             <FadeIn delay={300}>
               <button
                 onClick={() => scrollToSection('contact')}
-                className=""
+                className="inline-flex items-center gap-0 mb-12 group:"
               >
-                <div className="">
+                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-[26px] py-[13px] text-base ">
+
                   Get in Touch
                 </div>
               </button>
