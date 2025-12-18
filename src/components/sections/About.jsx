@@ -66,6 +66,29 @@ const About = () => {
           </div>
 
 
+          <FadeIn delay={300}>
+            <div className="">
+              {
+                ABOUT_STATS.bio.map((stat, index) => (
+                  <div key={index}
+                    className="">
+
+                    <div className=""></div>
+
+                    <div className="">
+                      {stat.value}
+                    </div>
+                    <p
+                      className="">
+                      {stat.lable}
+                    </p>
+                  </div>
+
+                ))}
+            </div>
+          </FadeIn>
+          {/* 4th  FadeIn */}
+
     
 }
 
