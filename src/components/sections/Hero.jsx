@@ -97,44 +97,41 @@ const Hero = () => {
                     <div className="">
 
                       <div className="">
-                        <SiReact  className="" />
-                        </div>
+                        <SiReact className="" />
+                      </div>
 
-                        <div className="">
-                        <SiNextdotjs  className="" />
-                        </div>
+                      <div className="">
+                        <SiNextdotjs className="" />
+                      </div>
 
-                        <div className="">
-                        <SiTailwindcss  className="" />
-                        </div>
-
-
-                        <div className="">
-                        <SiNodedotjs  className="" />
-                        </div>
-
-                        <div className="">
-                        <SiMongodb  className="" />
-                        </div>
-
- 
+                      <div className="">
+                        <SiTailwindcss className="" />
+                      </div>
 
 
+                      <div className="">
+                        <SiNodedotjs className="" />
+                      </div>
 
-
-
-
-
-
-
-
-                        {/* all */}
+                      <div className="">
+                        <SiMongodb className="" />
                       </div>
                     </div>
 
-                  </section>
+                  </FadeIn>
+                </div>
+              </div>
+            </div>
 
-                  )
+          </FadeIn>
+
+          {/* all */}
+        </div>
+      </div>
+
+    </section >
+
+  )
 }
 
-                  export default Hero
+export default Hero
