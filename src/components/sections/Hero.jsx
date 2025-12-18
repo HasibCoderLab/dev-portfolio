@@ -44,7 +44,7 @@ const Hero = () => {
                 <div className="relative z-10 bg-white text-[#212121] rounded-[17px]  px-6 py-3 text-base font-medium border border-white cursor-pointer
                  ">
 
-                  Get in Touch
+                  Get in Touch.
                 </div>
               </button>
             </FadeIn>
