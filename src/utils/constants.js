@@ -5,10 +5,14 @@ export const PERSONAL_INFO = {
   location: "Rajshahi, Bangladesh",
   tagline: "Building modern, fast, and user-friendly web experiences",
   bio: [
-    "Frontend Developer passionate about modern web technologies.",
-    "Experienced in React, Next.js, TypeScript, and Tailwind CSS.",
-    "Focused on clean UI, performance, and accessibility.",
-  ],
+  "Frontend Developer with a strong passion for building modern, responsive, and user-focused web applications that deliver real value.",
+  "Experienced in React, Next.js, TypeScript, and Tailwind CSS, with a solid understanding of component-based architecture and state management.",
+  "Focused on writing clean, maintainable, and scalable code while ensuring high performance, accessibility, and cross-browser compatibility.",
+  "Skilled in translating UI/UX designs into pixel-perfect, interactive interfaces with attention to detail.",
+  "Enjoys solving real-world problems through code and continuously learning new technologies to grow as a developer.",
+  "Driven by curiosity, consistency, and the goal of becoming better with every project built.",
+],
+
 };
 
 export const SOCIAL_LINKS = {

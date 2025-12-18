@@ -29,32 +29,32 @@ const About = () => {
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/*Main grid  */}
 
-      <div className="">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 ">
         {/*Left column Container     */}
-        <div className="">
-          <div className="">
+        <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8">
             <FadeIn delay={60}>
-              <div className="">
-                <Code2 className ="" />
-                <span className="">
+              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
+                <Code2 className ="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">
 
                   Full-Stack Next.js Developer
                 </span>
-                <Sparkles className="" />
+                <Sparkles className="w-4 h-4 text-primary" />
 
               </div>
             </FadeIn>
 
             {/* =======    2nd FadeIn     ============= */}
             <FadeIn delay={100}>
-              <h2 className="">  Crafting Digital Experiences </h2>
+              <h2 className=" text-3xl  lg:4xl  font-normal text-white leading-tight"> I am a developer who creates beautiful, fast, and efficient digital experiences using modern web technologies.  </h2>
             </FadeIn>
 
 
             {/* 3rd FadeIn */}
 
             <FadeIn delay={200}>
-              <div className="">
+              <div className="flex flex-col gap-4">
                 {
                   PERSONAL_INFO.bio.map((paragraph, index) => (
                     <p key={index}
@@ -91,9 +91,9 @@ const About = () => {
           {/* 4th  FadeIn */}
           <FadeIn delay={400}>
             <button onClick={() => window.open(PERSONAL_INFO.resume, '_blank')}
-              className=""
+              className=" bg-white text-[#212121] rounded-[17px]  px-6 py-2 text-base font-medium border border-white cursor-pointer"
             >
-              <Download className="w-4" />
+              <Download className="" />
 
               Download  Resume.
             </button>
