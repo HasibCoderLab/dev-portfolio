@@ -43,6 +43,22 @@ const RadialGradientBackground = ({ variant = 'hero', gradients = [] }) => {
         blur: '0px',
         opacity: 0.5,
       },
+    ],
+     about: [
+      {
+        position: 'bottom-0 left-[75%] ',
+        size: 'w-[700px] h-[700px]',
+        colors: [
+          { color: 'rgba(141,255,105,0.25)', stop: '100%' },
+          { color: 'rgba(141,255,105,0.45)', stop: '100%' },
+          { color: 'rgba(141,255,105,0.5)', stop: '100%' },
+          { color: 'rgba(141,255,105,0.45)', stop: '100%' },
+          { color: 'rgba(141,255,105,0.25)', stop: '100%' }
+
+        ],
+        blur: '0px',
+        opacity: 0.5,
+      }
     ]
 
   }
