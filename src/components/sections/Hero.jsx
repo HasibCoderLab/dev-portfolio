@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Left Column - Content */}
           <div className="text-left">
             <FadeIn delay={0}>
-              <div className="inline-flex items-center gap-2.5 px-[18px] py-[11px] mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full">
+              <div className="inline-flex items-center gap-2.5 px-4.5 py-2.5 mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full">
                 <Star className="w-4 h-4 text-white fill-white" />
                 <span className="text-xs md:text-sm  text-white tracking-[1.2px]">
                   {PERSONAL_INFO.title} | Based in {PERSONAL_INFO.location}
@@ -41,7 +41,7 @@ const Hero = () => {
                 onClick={() => scrollToSection('contact')}
                 className="inline-flex items-center gap-0 mb-12 group:"
               >
-                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-[26px] py-[13px] text-base font-medium border border-white cursor-pointer
+                <div className="relative z-10 bg-white text-[#212121] rounded-[17px]  px-6 py-3 text-base font-medium border border-white cursor-pointer
                  ">
 
                   Get in Touch
@@ -73,9 +73,9 @@ const Hero = () => {
 
           <FadeIn delay={200}>
             <div className="relativer">
-              <div className="relative overflow-hidden rounded-2xl">
-                <div className="">
-                  <div className=""></div>
+              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-[500px] ml-auto group">
+                <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                  <div className="absolute inset-[-2px] bg-linear-to-r from-primary/20 via-primary/10"></div>
                 </div>
 
 
