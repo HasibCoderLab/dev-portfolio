@@ -5,9 +5,7 @@ import { PERSONAL_INFO, ABOUT_STATS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
 import RadialGradientBackground from "../background/RadialGradientBackground";
 
-
 const About = () => {
-
   const skills = [
     { name: "React.js", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
@@ -87,63 +85,70 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2 relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <div>
-                    <div>
-                      <div>
-                        <Code2 />
-                      </div>
-                      <div>
-                        <h3>Expertise</h3>
-                        <p></p>
-                      </div>
+
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-xl w-fit">
+                      <Code2 className="w-6 h-6 text-primary" />
+                    </div>
+                    {/*  */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-white mb-2">Expertise</h3>
+                      <p className="text-sm text-white/70 leading-relaxed">I am a developer who creates beautiful, fast, and efficient digital experiences using modern web technologies.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <div>
-                  <div>
-                    <Sparkles />
-                  </div>
-                  <div>
-                    <h3>Clean Code</h3>
-                    <p>Writing maintainable, well-documented code that scales</p>
-                  </div>
-                </div>
+              {/* for Sparkles icon */}
 
-                <div>
-                  <div>
-                    <Download />
-                  </div>
-                  <div>
-                    <h3>Performance</h3>
-                    <p>Optimization for speed and efficiency in every project.</p>
-                  </div>
-                </div>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
 
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <div>100%</div>
-                    <div>Client Satisfied</div>
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
+                  <div className="p-3 bg-primary/10 rounded-xl w-fit">
+                    <Sparkles className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <div>24/7</div>
-                    <div>Support Available</div>
-                  </div>
-                  <div>
-                    <div>Fast</div>
-                    <div>Delivery Time</div>
-                  </div>
+                  <h3 className="text-base font-semibold text-white mb-2">Clean Code</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">React, Next.js, TypeScript, Tailwind CSS, and other modern web technologies.</p>
+                </div>
+              </div>
+
+              {/* for Download icon  */}
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <Download className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3>Performance</h3>
+                  <p>Optimization for speed and efficiency in every project.</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div>100%</div>
+                  <div>Client Satisfied</div>
+                </div>
+                <div>
+                  <div>24/7</div>
+                  <div>Support Available</div>
+                </div>
+                <div>
+                  <div>Fast</div>
+                  <div>Delivery Time</div>
                 </div>
               </div>
             </div>
+
           </FadeIn>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 
 export default About;
+
+
+
