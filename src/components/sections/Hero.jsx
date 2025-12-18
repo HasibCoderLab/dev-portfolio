@@ -73,18 +73,18 @@ const Hero = () => {
 
                               {/* coustom CSS inset-[-2px]`max-w-[500px]` */}
           <FadeIn delay={200}>
-            <div className="relativer">
-              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group">
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-[500px] ml-auto group">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                  <div className="absolute inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary  animate-spin-slow rounded-2xl"></div>
+                  <div className="absolute inset-[-6px] bg-linear-to-r from-primary/20 via-primary/10 to-primary  animate-spin-slow rounded-2xl"></div>
                 </div>
 
 
 
                 {/* image Container */}
-                <div className="">
+                <div className="relative overflow-hidden rounded-2xl m-[5px] h-[calc(100%-10px)] ">
                   <img src="/developer.png" alt="developer-pic"
-                    className=""
+                    className="w-full h-full object-cover"
 
                   />
                 </div>
