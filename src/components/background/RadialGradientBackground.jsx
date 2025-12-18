@@ -44,7 +44,7 @@ const RadialGradientBackground = ({ variant = 'hero', gradients = [] }) => {
         opacity: 0.5,
       },
     ],
-     about: [
+    about: [
       {
         position: 'bottom-0 left-[75%] ',
         size: 'w-[700px] h-[700px]',
@@ -63,16 +63,27 @@ const RadialGradientBackground = ({ variant = 'hero', gradients = [] }) => {
 
   }
 
-  const activeGradients = variant ==='custom' ? gradients : varients[variant] ||varients.hero;
-  const generateGradients  = (colors) =>{
-    const colorStops = colors.map(({color,stop}) => `${color} ${stop}`).join(' ,');
+  const activeGradients = variant === 'custom' ? gradients : varients[variant] || varients.hero;
+  const generateGradients = (colors) => {
+    const colorStops = colors.map(({ color, stop }) => `${color} ${stop}`).join(' ,');
     return `radial-gradient(circle ar center, transparent 0%  transparent 30%, ${colorStops} , transparent 60% , transparent 100%) `;
   }
 
   return (
-    <div>
-      RadialGradientBackground
-
+    <div className="">
+      {
+        activeGradients.map((gradient, index) => (
+          <div
+            key={index}
+            className={`absolute ${gradient.position} ${gradient.size} rounded-full`}
+            style={{
+              background: generateGradients(gradient.colors),
+              filter: `blur(${gradient.blur})`,
+              opacity: gradient.opacity,
+            }}
+          />
+        ))
+      }
     </div>
   )
 }
