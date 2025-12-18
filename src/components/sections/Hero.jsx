@@ -1,6 +1,6 @@
 // import React, { useState } from 'react'
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
-import { Star } from "lucide-react";
+import { Star, ChevronDown } from "lucide-react";
 import { PERSONAL_INFO, STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import FadeIn from "../animations/FadeIn";
@@ -71,7 +71,7 @@ const Hero = () => {
           {/* Left Column - For image */}
 
 
-                              {/* coustom CSS inset-[-2px]`max-w-[500px]` */}
+          {/* coustom CSS inset-[-2px]`max-w-[500px]` */}
           <FadeIn delay={200}>
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-[500px] ml-auto group">
@@ -97,7 +97,7 @@ const Hero = () => {
                   <FadeIn delay={500}>
                     <div className="flex items-center gap-4 bg-black/40  backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
 
-                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer"> 
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer">
                         <SiReact className="h-full w-full text-primary" />
                       </div>
 
@@ -126,10 +126,18 @@ const Hero = () => {
 
           </FadeIn>
 
-          {/* all */}
+          {/*  */}
         </div>
       </div>
 
+
+      {/* Scroll Indicstor */}
+      <button
+      onClick={() => scrollToSection('about')}
+className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+      >
+        <ChevronDown className="w-8 h-8 text-primary cursor-pointer" />
+      </button>
     </section >
 
   )
