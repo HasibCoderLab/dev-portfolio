@@ -22,89 +22,128 @@ const About = () => {
     { name: "Vite", icon: SiVite, color: "#646CFF" },
   ];
 
+  return (
+    <section id="about" className="relative py-20 overflow-hidden bg-black">
+      <RadialGradientBackground variant="about" />
 
-  return <section id="about" className="relative py-20 overflow-hidden bg-black" >
-    <RadialGradientBackground variant="about" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          {/* Left column */}
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-8">
+              <FadeIn delay={60}>
+                <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
+                  <Code2 className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">
+                    Full-Stack Next.js Developer
+                  </span>
+                  <Sparkles className="w-4 h-4 text-primary" />
+                </div>
+              </FadeIn>
 
-    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/*Main grid  */}
+              <FadeIn delay={100}>
+                <h2 className="text-3xl lg:text-4xl font-normal text-white leading-tight">
+                  I am a developer who creates beautiful, fast, and efficient digital experiences using modern web technologies.
+                </h2>
+              </FadeIn>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 ">
-        {/*Left column Container     */}
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-col gap-8">
-            <FadeIn delay={60}>
-              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
-                <Code2 className ="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">
-
-                  Full-Stack Next.js Developer
-                </span>
-                <Sparkles className="w-4 h-4 text-primary" />
-
-              </div>
-            </FadeIn>
-
-            {/* =======    2nd FadeIn     ============= */}
-            <FadeIn delay={100}>
-              <h2 className=" text-3xl  lg:4xl  font-normal text-white leading-tight"> I am a developer who creates beautiful, fast, and efficient digital experiences using modern web technologies.  </h2>
-            </FadeIn>
-
-
-            {/* 3rd FadeIn */}
-
-            <FadeIn delay={200}>
-              <div className="flex flex-col gap-4">
-                {
-                  PERSONAL_INFO.bio.map((paragraph, index) => (
-                    <p key={index}
-                      className="text-base text-white/70 leading-relaxed">
+              <FadeIn delay={200}>
+                <div className="flex flex-col gap-4">
+                  {PERSONAL_INFO.bio.map((paragraph, index) => (
+                    <p key={index} className="text-base text-white/70 leading-relaxed">
                       {paragraph}
                     </p>
                   ))}
+                </div>
+              </FadeIn>
+            </div>
+
+            <FadeIn delay={300}>
+              <div className="grid grid-cols-3 gap-8">
+                {ABOUT_STATS.map((stat, index) => (
+                  <div key={index} className="relative">
+                    <div className="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-primary via-primary/50 to-primary/20 rounded-b-full"></div>
+                    <div className="text-3xl font-normal text-white mb-2 font-mono">{stat.value}</div>
+                    <p className="text-sm text-white/60 leading-snug">{stat.label}</p>
+                  </div>
+                ))}
               </div>
+            </FadeIn>
+
+            <FadeIn delay={400}>
+              <button
+                onClick={() => window.open(PERSONAL_INFO.resume, "_blank")}
+                className="inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full px-8 py-4 text-base font-medium cursor-pointer transition-all duration-300 w-fit group"
+              >
+                <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
+                Download Resume.
+              </button>
             </FadeIn>
           </div>
 
-
-          <FadeIn delay={300}>
-            <div className="grid grid-cols-3 gap-8 ">
-              {
-                ABOUT_STATS.map((stat, index) => (
-                  <div key={index}
-                    className="relative">
-
-                    <div className="absolute -left-4 top-0 w-1 h-full  bg-linear-to-b from from-primary via-primary/50 to-primary/20 rounded-b-full "></div>
-
-                    <div className="text-3xl font-notmal text-white mb-2 font-mono">
-                      {stat.value}
+          {/* Right Column */}
+          <FadeIn delay={200}>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-2 relative group">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
+                  <div>
+                    <div>
+                      <div>
+                        <Code2 />
+                      </div>
+                      <div>
+                        <h3>Expertise</h3>
+                        <p></p>
+                      </div>
                     </div>
-                    <p
-                      className="text-sm text-white/60 leading-snug">
-                      {stat.label}
-                    </p>
                   </div>
+                </div>
+              </div>
 
-                ))}
+              <div>
+                <div>
+                  <div>
+                    <Sparkles />
+                  </div>
+                  <div>
+                    <h3>Clean Code</h3>
+                    <p>Writing maintainable, well-documented code that scales</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    <Download />
+                  </div>
+                  <div>
+                    <h3>Performance</h3>
+                    <p>Optimization for speed and efficiency in every project.</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <div>100%</div>
+                    <div>Client Satisfied</div>
+                  </div>
+                  <div>
+                    <div>24/7</div>
+                    <div>Support Available</div>
+                  </div>
+                  <div>
+                    <div>Fast</div>
+                    <div>Delivery Time</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </FadeIn>
-          {/* 4th  FadeIn */}
-          <FadeIn delay={400}>
-            <button onClick={() => window.open(PERSONAL_INFO.resume, '_blank')}
-              className="inline-flex items-centergap-3 bg-white hover:bg-white/90 text-black rounded-full  px-8 py-4 text-base font-medium  cursor-pointer transition-all duration-300 w-fit group"
-            >
-              <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transfrom duration-300" />
-
-              Download  Resume.
-            </button>
-          </FadeIn>
         </div>
-
-        
       </div>
-    </div>
-  </section>
+    </section>
+  );
+};
 
-}
-
-export default About
+export default About;
