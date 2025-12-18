@@ -97,25 +97,25 @@ const Hero = () => {
                   <FadeIn delay={500}>
                     <div className="flex items-center gap-4 bg-black/40  backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
 
-                      <div className="">
-                        <SiReact className="" />
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer"> 
+                        <SiReact className="h-full w-full text-primary" />
                       </div>
 
-                      <div className="">
-                        <SiNextdotjs className="" />
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer">
+                        <SiNextdotjs className="h-full w-full text-primary" />
                       </div>
 
-                      <div className="">
-                        <SiTailwindcss className="" />
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer">
+                        <SiTailwindcss className="h-full w-full text-primary" />
                       </div>
 
 
-                      <div className="">
-                        <SiNodedotjs className="" />
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer">
+                        <SiNodedotjs className="h-full w-full text-primary" />
                       </div>
 
-                      <div className="">
-                        <SiMongodb className="" />
+                      <div className="w-6 h-6   flex items-center justify-center hover:scale-110 transition-trasfrom duration-300 cursor-pointer">
+                        <SiMongodb className="h-full w-full text-primary" />
                       </div>
                     </div>
 
