@@ -4,9 +4,9 @@ import { Star } from "lucide-react";
 import { PERSONAL_INFO, STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import FadeIn from "../animations/FadeIn";
-import  RadialGradientBackground  from "../background/RadialGradientBackground";
+import RadialGradientBackground from "../background/RadialGradientBackground";
 const Hero = () => {
-  
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black ">
       {/* <RadialGradientBackground variant="hero" /> */}
@@ -58,8 +58,8 @@ const Hero = () => {
                         {stat.value}
                       </div>
                       <p className='text-sm text-white leading-snug'> {
-                      stat.label}
-                       </p>
+                        stat.label}
+                      </p>
                     </div>
 
                   ))
@@ -68,14 +68,73 @@ const Hero = () => {
             </FadeIn>
           </div>
 
+          {/* Left Column - For image */}
 
-          
-        </div>
-      </div>
 
-    </section>
+          <FadeIn delay={200}>
+            <div className="">
+              <div className="">
+                <div className="">
+                  <div className=""></div>
+                </div>
 
-  )
+
+
+                {/* image Container */}
+                <div className="">
+                  <img src="" alt=""
+                    className=""
+
+                  />
+                </div>
+
+
+
+                {/* technology logo Container */}
+
+                <div className="">
+                  <FadeIn delay={500}>
+                    <div className="">
+
+                      <div className="">
+                        <SiReact  className="" />
+                        </div>
+
+                        <div className="">
+                        <SiNextdotjs  className="" />
+                        </div>
+
+                        <div className="">
+                        <SiTailwindcss  className="" />
+                        </div>
+
+
+                        <div className="">
+                        <SiNodedotjs  className="" />
+                        </div>
+
+                        <div className="">
+                        <SiMongodb  className="" />
+                        </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+                        {/* all */}
+                      </div>
+                    </div>
+
+                  </section>
+
+                  )
 }
 
-export default Hero
+                  export default Hero
