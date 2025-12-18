@@ -64,13 +64,19 @@ const RadialGradientBackground = ({ variant = 'hero', gradients = [] }) => {
   }
 
   const activeGradients = variant === 'custom' ? gradients : varients[variant] || varients.hero;
-  const generateGradients = (colors) => {
-    const colorStops = colors.map(({ color, stop }) => `${color} ${stop}`).join(' ,');
-    return `radial-gradient(circle ar center, transparent 0%  transparent 30%, ${colorStops} , transparent 60% , transparent 100%) `;
-  }
+  
+// ===============  generateGradients        ============
+   const generateGradients = (colors) => {
+  const colorStops = colors
+    .map(({ color, stop }) => `${color} ${stop}`)
+    .join(', ');
+
+  return `radial-gradient(circle at center, transparent 0%,  transparent 30%, ${colorStops}, transparent 70%, transparent 100% )`; 
+};
+
 
   return (
-    <div className="">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {
         activeGradients.map((gradient, index) => (
           <div
