@@ -71,11 +71,12 @@ const Hero = () => {
           {/* Left Column - For image */}
 
 
+                              {/* coustom CSS inset-[-2px]`max-w-[500px]` */}
           <FadeIn delay={200}>
             <div className="relativer">
-              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-[500px] ml-auto group">
+              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                  <div className="absolute inset-[-2px] bg-linear-to-r from-primary/20 via-primary/10"></div>
+                  <div className="absolute inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary  animate-spin-slow rounded-2xl"></div>
                 </div>
 
 
