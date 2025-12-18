@@ -129,34 +129,38 @@ const About = () => {
               </div>
 
               {/* ===============     ========================== */}
-              <div className="">
-                <div className=""></div>
-                <div className="">
-                  <div className="">
-                  </div>
+              <div className="col-span-2 relative group">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
+                
+                  <div className="grid grid-cols-3 gap-6 text-center">
+                  
 
                   {/* [1st] */}
 
                   <div>
-                    <div className=""></div>
-                    <div className=""></div>
+                    <div className="text-2xl font-bold text-primary mb-1">100%</div>
+                    <div className="text-xs text-white/60">Client Satisfide</div>
                   </div>
 
                   {/* [2nd] */}
                   <div>
-                    <div className=""></div>
-                    <div className=""></div>
+                    <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                    <div className="text-xs text-white/60">Support</div>
                   </div>
 
                   {/* [3rd ] */}
                   <div>
-                    <div className=""></div>
-                    <div className=""></div>
+                    <div className="text-2xl font-bold text-primary mb-1">Fast</div>
+                    <div className="text-xs text-white/60">Delivery</div>
                   </div>
 
                 </div>
               </div>
             </div>
+            </div>
+
 {/*  */}
           </FadeIn>
 
