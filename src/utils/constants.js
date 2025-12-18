@@ -4,6 +4,7 @@ export const PERSONAL_INFO = {
   email: "coder.mohammadhasibhasan@gmail.com",
   location: "Rajshahi, Bangladesh",
   tagline: "Building modern, fast, and user-friendly web experiences",
+  resume:'/',
 bio: [
   "I am a Frontend Developer with a strong interest in building web applications that work efficiently and reliably. I focus on writing clean and organized code that is easy to maintain and understand.",
 
