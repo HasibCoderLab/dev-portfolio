@@ -170,18 +170,18 @@ const About = () => {
 
         {/* ==== Skills Grid Section  */}
         <FadeIn delay={500}>
-          <div className="">
-            <div className="">
-              <h3 className=""> Tech Stackk & Experience </h3>
-              <p className=""> Technology I work  with to build amazing product</p>
+          <div className="flex flex-col items-center gap-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-normal text-white mb-2"> Tech Stackk & Experience </h3>
+              <p className="text-sm text-white/60"> Technology I work  with to build amazing product</p>
             </div >
 
-            <div className="">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full max-w-4xl">
               {
                 skills.map((skill, index) => (
                   <div
                     key={index}
-                    className=""
+                    className="group relative bg-white/5 hover:bg-white/10 border border-white/10  hover:border-primary/50  rounded-2xl p-6  flex  flex-col hover:scale-105  items-center justify-center gap-3  transition-all duration-300 "
                   >
                     <skill.icon className="" />
                     <div className="">
