@@ -48,7 +48,7 @@ const Skills = () => {
     return (
         <section id="skills" className="relative py-20 bg-black overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 top-0 w-96 h-96 bg-primary-10 -rounded-full  blur-3xl opacity-50 " />
+                <div className="absolute top-1/4  w-96 h-96 bg-primary-10 -rounded-full  blur-3xl opacity-50 " />
                 <div className="absolute bottom-1/4 right-0 w-96  h-96 bg-primary-10 -rounded-full  blur-3xl opacity-50 " />
 
             </div>
@@ -83,25 +83,28 @@ const Skills = () => {
                                         const proficiency = getProficiencyLevel(skill.level);
                                         return (
                                             <div key={skill.id} className="space-y-2">
-                                                <div className="flex items-center justify-between mb-2">
+                                                <div className="flex items-center justify-between ">
                                                     <div className="flex items-center gap-3">
-                                                        <div className="p-2 bg-gray-800 rounded-lg">
-                                                            <IconComponent className="w-5 h-5 text-cyan-400" />
+                                                        <div className="p-2 bg-white/5 rounded-lg">
+                                                            <IconComponent className="w- h-4 text-primary" />
                                                         </div>
+
                                                         <div>
-                                                            <div className="font-medium">{skill.name}</div>
+                                                            <div className="font-medium text-sm text-white">{skill.name}</div>
                                                             <div className="text-xs text-gray-500">{skill.experiences}</div>
                                                         </div>
                                                     </div>
+
+
                                                     <span className={`text-[10px] px-2 py-0.5 rounded-full border " ${getLevelColor(skill.level)}`}>
                                                         {skill.level}
                                                     </span>
                                                 </div>
 
                                                 {/* Progress Bar */}
-                                                <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                                                <div className="relative h-1.5 w bg-white/5 rounded-full overflow-hidden">
                                                     <div
-                                                        className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 "
+                                                        className=" absolute h-full top-0 left-0  bg-linear-gradient-to-r from-primary-10 to-primary-80  rounded-full transition-all duration-100  ease-in-out"
                                                         style={{ width: `${proficiency}%` }}
                                                     ></div>
                                                 </div>
@@ -109,6 +112,9 @@ const Skills = () => {
                                         );
                                     })}
                                 </div>
+
+                                {/*  Hover Glow Effect */}
+                                <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/5 group-hover:from-primary/5  group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none  "></div>
                             </div>
                         </FadeIn>
 
