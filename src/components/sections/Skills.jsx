@@ -24,11 +24,17 @@ const Skills = () => {
     skills.find(s => s.name === 'Next.Auth'),
   ].filter(Boolean),
   'Tools & Others': [
-    skills.find(s => s.name === 'Git & GitHub'),
-    skills.find(s => s.name === 'Responsive Design'),
-    skills.find(s => s.name === 'Canva'),
-    skills.find(s => s.name === 'Vite'),
-  ].filter(Boolean),
+  skills.find(s => s.name === 'Git & GitHub'),
+  skills.find(s => s.name === 'VS Code'),
+  skills.find(s => s.name === 'Cursor AI'),
+  skills.find(s => s.name === 'Vercel'),
+  skills.find(s => s.name === 'Linux'),
+  skills.find(s => s.name === 'Postman'),
+  skills.find(s => s.name === 'npm'),
+  skills.find(s => s.name === 'Responsive Design'),
+  skills.find(s => s.name === 'Canva'),
+  skills.find(s => s.name === 'Vite'),
+].filter(Boolean),
 };
 
     // Get proficiency percentage
