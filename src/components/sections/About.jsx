@@ -13,11 +13,11 @@ const About = () => {
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38B2AC" },
     { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
     { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-    { name: "Redux", icon: SiRedux, color: "#764ABC" },
-    { name: "Git & GitHub", icon: SiGit, color: "#F05032" },
-    { name: "Canva", icon: SiCanva, color: "#00C4CC" },
-    { name: "Vite", icon: SiVite, color: "#646CFF" },
+    // { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    // { name: "Redux", icon: SiRedux, color: "#764ABC" },
+    // { name: "Git & GitHub", icon: SiGit, color: "#F05032" },
+    // { name: "Canva", icon: SiCanva, color: "#00C4CC" },
+    // { name: "Vite", icon: SiVite, color: "#646CFF" },
   ];
 
   return (
@@ -183,12 +183,12 @@ const About = () => {
                     key={index}
                     className="group relative bg-white/5 hover:bg-white/10 border border-white/10  hover:border-primary/50  rounded-2xl p-6  flex  flex-col hover:scale-105  items-center justify-center gap-3  transition-all duration-300 "
                   >
-                    <skill.icon className="" />
-                    <div className="">
+                    <skill.icon className="text-3xl text-primary" />
+                    <div className="text-sm text-white/80 font-medium text-center">
                       {skill.name}
                     </div >
                     {/* Hover Glow Effect */}
-                    <div className=""></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                   </div >
 
                 ))
