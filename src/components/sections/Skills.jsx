@@ -61,7 +61,7 @@ const Skills = () => {
                             <span className="text-sm text-primary font-medium">My Expertise</span>
                         </div>
                         <h2 className="text-4xl text-white  font-bold mb-4">Skills & Technologies</h2>
-                    <p className=""></p>
+                        <p className=""></p>
                     </div>
                 </FadeIn>
 
@@ -69,16 +69,20 @@ const Skills = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.entries(skillCategories).map(([category, categorySkills], categoryIndex) => (
                         <FadeIn key={category} delay={categoryIndex * 100}>
-                            <div className="p-6 rounded-2xl  p-6 bg-gray-900/50 border border-white/10 hover:border-primary-30 transition-all duration-300">
-                                <h3 className="text-xl font-semibold mb-6">{category}</h3>
 
+                            <div className=" relative p-6 bg-white/5 rounded-2xl   border border-white/10 hover:border-primary-30 transition-all duration-300">
+
+                                <div className="flex items-center gap-3 mb-6 pb-4  border-b border-white/10">
+                                    <div className="w-1 h-8 bg-linear-to-b from-primary/30 to-primary-10 rounded-full"></div>
+                                    <h3 className="text-xl font-semibold text-white">{category}</h3>
+                                </div>
                                 {/* Skills List */}
-                                <div className="space-y-6">
+                                <div className="space-y-5">
                                     {categorySkills.map((skill) => {
                                         const IconComponent = Icons[skill.icon] || Icons.Code2;
                                         const proficiency = getProficiencyLevel(skill.level);
                                         return (
-                                            <div key={skill.id} className="group">
+                                            <div key={skill.id} className="space-y-2">
                                                 <div className="flex items-center justify-between mb-2">
                                                     <div className="flex items-center gap-3">
                                                         <div className="p-2 bg-gray-800 rounded-lg">
@@ -107,10 +111,10 @@ const Skills = () => {
                                 </div>
                             </div>
                         </FadeIn>
-                        
+
                     ))}
-                    </div>
                 </div>
+            </div>
 
 
         </section>
