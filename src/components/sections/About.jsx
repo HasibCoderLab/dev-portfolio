@@ -1,5 +1,5 @@
-// import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiJavascript, SiRedux, SiGit, SiCanva, SiVite } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
+// import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiJavascript, SiRedux, SiGit, SiCanva, SiVite } from "react-icons/si";
 import { Download, Code2, Sparkles } from "lucide-react";
 import { PERSONAL_INFO, ABOUT_STATS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
@@ -172,7 +172,7 @@ const About = () => {
         <FadeIn delay={500}>
           <div className="flex flex-col items-center gap-8">
             <div className="text-center">
-              <h3 className="text-2xl font-normal text-white mb-2"> Tech Stackk & Experience </h3>
+              <h3 className="text-2xl font-normal text-white mb-2"> Tech Stack & Expertise </h3>
               <p className="text-sm text-white/60"> Technology I work  with to build amazing product</p>
             </div >
 
@@ -188,7 +188,7 @@ const About = () => {
                       {skill.name}
                     </div >
                     {/* Hover Glow Effect */}
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover: from-primary/10 to-primary/10  rounded-2xl   transition-all duration-300"></div>
                   </div >
 
                 ))
