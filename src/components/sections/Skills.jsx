@@ -40,10 +40,10 @@ const Skills = () => {
     // Get proficiency percentage
     const getProficiencyLevel = (level) => {
         const levels = {
-            'Basic':50,
-            'Expert': 95,
-            'Advanced': 80,
+            'Basic': 50,
             'Intermediate': 65,
+            'Advanced': 80,
+            'Expert': 95,
         };
         return levels[level] || 50;
     };
@@ -51,9 +51,10 @@ const Skills = () => {
     // Get level color
     const getLevelColor = (level) => {
         const colors = {
-            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
-            'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
+            'Basic': 'text-amber-400 bg-amber-500/20 border-amber-500/30',
             'Intermediate': 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
+            'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
+            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
         };
         return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
     };
@@ -124,7 +125,7 @@ const Skills = () => {
                                 </div>
 
                                 {/* Hover Glow Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/10 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                                <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/10 rounded-2xl transition-all duration-300 pointer-events-none"></div>
                             </div>
                         </FadeIn>
                     ))}
