@@ -117,7 +117,7 @@ const Projects = () => {
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="w-full sm:w-[80%] md:w-[45%] lg:w-[30%] flex-shrink-0 snap-start"
+                  className="w-full sm:w-[80%] md:w-[45%] lg:w-[30%] shrink-0 snap-start"
                 >
                   <ProjectCard project={project} />
                 </div>
