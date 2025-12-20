@@ -96,17 +96,28 @@ const Projects = () => {
                                         className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category
                                             ? 'text-white'
                                             : 'text-white/30 hover:text-white'
-                                            }`}
+                                            }`} 
                                     >
                                         <div className={`absolute inset-0 rounded-full transition-all dutarion-300 ${activeCategory === category
                                                 ? 'bg-primary/10 opacity-100'
                                                 : 'bg-white/5 border border-white/10 hover:text-white  group hover:bg-white/10'
-                                            }`}></div>
+                                            }`} />
+                                            <div className=""
+                                            {React.createElement(categoryIcons[category],{className:'w-4 h-4'})}
+                                        
+                                            >
+
+                                                <span className=""> {category} </span>
+                                            </div>
+                                            {activeCategory === category && (
+                                                <div className="" />
+                                            )}
                                     </button>
                                 ))
                             }
                         </div>
                     </FadeIn>
+                    
                     )
 }
 
