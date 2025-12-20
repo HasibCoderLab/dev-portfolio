@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "RGB Color Generator with TS",
-    descriptions: "Generate random RGB colors using TypeScript",
+    description: "Generate random RGB colors using TypeScript",
     image: "/images/projects/project1.png",
     category: "TypeScript",
     technologies: ["HTML", "CSS", "TypeScript"],
@@ -13,7 +13,7 @@ export const projects = [
   {
     id: 2,
     title: "Todo App",
-    descriptions: "Simple todo app with local storage",
+    description: "Simple todo app with local storage",
     image: "/images/projects/project2.png",
     category: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -24,7 +24,7 @@ export const projects = [
   {
     id: 3,
     title: "Portfolio Website",
-    descriptions: "Personal portfolio website",
+    description: "Personal portfolio website",
     image: "/images/projects/project3.png",
     category: "Frontend",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -35,7 +35,7 @@ export const projects = [
   {
     id: 4,
     title: "Next.js Landing Page",
-    descriptions: "Landing page built with Next.js",
+    description: "Landing page built with Next.js",
     image: "/images/projects/project4.png",
     category: "Next.js",
     technologies: ["Next.js", "React", "Tailwind CSS"],
@@ -46,7 +46,7 @@ export const projects = [
   {
     id: 5,
     title: "JavaScript Mini Games",
-    descriptions: "Collection of small JS games",
+    description: "Collection of small JS games",
     image: "/images/projects/project5.png",
     category: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -57,7 +57,7 @@ export const projects = [
   {
     id: 6,
     title: "TypeScript Counter App",
-    descriptions: "Counter app with TypeScript logic",
+    description: "Counter app with TypeScript logic",
     image: "/images/projects/project6.png",
     category: "TypeScript",
     technologies: ["HTML", "CSS", "TypeScript"],
