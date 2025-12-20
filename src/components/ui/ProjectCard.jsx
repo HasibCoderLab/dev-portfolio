@@ -4,7 +4,7 @@ import { ExternalLink, Github, TrendingUp } from 'lucide-react'
 const ProjectCard = ({ project }) => {
   const { title, description, image, category, technologies, metrics, demoUrl, githubUrl } = project;
   return (
-    <div className="">
+    <div className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden  hover:border-primary/30 transition-all duration-300">
 
       <div className="">
         <img
