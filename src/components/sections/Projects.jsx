@@ -9,6 +9,10 @@ const Projects = () => {
     const [currentIndex,setCurrentIndex] = useState(0);
     const scrollContainerRef = useRef(null);
 
+    const filteredProject = activeCatagory === 'All'
+    ?projects
+    :projects.filter(project => project.catagory === activeCatagory);
+
   return (
     <div>Projects</div>
   )
