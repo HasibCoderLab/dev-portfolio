@@ -37,10 +37,29 @@ const Projects = () => {
     }
 
 
-    const nextSlide = () =>{
-        const maxIndex = Math.max(0,filteredProjects.length -3);
-        const newIndex = Math.min(currentIndex+1,maxIndex)
+    const nextSlide = () => {
+        const maxIndex = Math.max(0, filteredProjects.length - 3);
+        const newIndex = Math.min(currentIndex + 1, maxIndex)
     }
+
+
+    const prevSlide = () => {
+
+        const newIndex = Math.max(currentIndex - 1, 0);
+        scrollToIndex(newIndex);
+
+    }
+
+
+    // Category Icons Mapping
+    const categoryIcons = {
+        'All': Target,
+        'JavaScript': Zap,
+        'TypeScript': Sparkles,
+        'Frontend': Palette,
+        'Next.js': Global,
+    };
+
 
 
 
