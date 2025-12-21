@@ -29,7 +29,7 @@ export const projects = [
     category: "Frontend",
     technologies: ["HTML", "CSS", "JavaScript"],
     metrics: "Responsive",
-    demoUrl: "#",
+    demoUrl: "https://coderhasib.vercel.app/",
     githubUrl: "#",
   },
   {
@@ -40,8 +40,8 @@ export const projects = [
     category: "Next.js",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     metrics: "SEO Ready",
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://next-js-interface-omega.vercel.app/",
+    githubUrl: "https://github.com/HasibCoderLab/next-js-interface",
   },
   {
     id: 5,
