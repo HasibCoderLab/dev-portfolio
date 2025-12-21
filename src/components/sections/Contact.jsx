@@ -36,17 +36,101 @@ const Contact = () => {
         return;
     }
 
-    setStatus({ type: 'success', message: 'Message sent successfully!' });
+    setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to to you soon..' });
     setFormData({ name: '', email: '', message: '' });
 
     setTimeout(() => setStatus({ type: '', message: '' }), 5000);
 
-
+    const socialIcons = {
+        github: Github,
+        linkedin: Linkedin,
+        twitter: Twitter
+    }
 
 
     return (
-        <div>Contact</div>
-    )
+        <section id="contact" className="">
+            <div className="" >
+
+                <div className="" />
+                <div className="" />
+                <div className="" />
+            </div>
+
+            <div className="">
+                <FadeIn delay={0}>
+                    <div className="">
+                        <div className="">
+                            <Briefcase className="" />
+                            <span className="">Get in touch</span>
+                        </div>
+                        <h2 className="">Let's work  together</h2>
+                        <p className="">Have a project in mind ? Let's discuss how we can bring your ideas to life</p>
+                    </div>
+                </FadeIn>
+                {/* 2nd FadeIn */}
+
+                <div className="">
+                    <FadeIn delay={100}>
+                        <div className="">
+                            <form onSubmit={handleSubmit} className=''> 
+                        <div>
+                            <lable htmlFor="name" className="" > 
+                                Name 
+                                </lable>
+                                <input 
+                                type="text"
+                                id="name"
+                                name='name'
+                                value={formData.name}
+                                onChange={handleChange}
+                                className=''
+                                placeholder='Your Name'
+                                />
+                                </div>
+
+                                {/* Email */}
+
+                                 <div>
+                            <lable htmlFor="name" className="" > 
+                                Name 
+                                </lable>
+                                <input 
+                                type="email"
+                                id="name"
+                                name='name'
+                                value={formData.email}
+                                onChange={handleChange}
+                                className=''
+                                placeholder='Your email'
+                                />
+                                </div>
+
+
+
+                                {/* Message */}
+
+
+                                 <div>
+                            <lable htmlFor="name" className="" > 
+                                Name 
+                                </lable>
+                                <input 
+                                type="text"
+                                id="name"
+                                name='name'
+                                value={formData.message}
+                                onChange={handleChange}
+                                className=''
+                                placeholder='Your message'
+                                />
+                                </div>
+
+                        </div>
+                    </FadeIn>
+               
+
+                )
 }
 
-export default Contact
+                export default Contact
