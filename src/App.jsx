@@ -6,6 +6,7 @@ import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
 import Testimonials from './components/sections/Testimonials'
+import Contact from './components/sections/Contact'
 
 
 
@@ -15,16 +16,17 @@ const App = () => {
   return (
     <div className='min-h-screen bg-black pb-[100vh]'>
 
-      <Navbar/>
+      <Navbar />
       <main>
-        <Hero/>
+        <Hero />
         <About />
         <Skills />
         <Projects />
         <Services />
-        <Testimonials/>
+        <Testimonials />
+        <Contact />
       </main>
-      </div>
+    </div>
   )
 }
 
