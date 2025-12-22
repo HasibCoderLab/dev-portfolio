@@ -37,8 +37,8 @@ const Footer = () => {
           <FadeIn delay={100}>
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  {PERSONAL_INFO.name.split(' ')[0]}
+                <h3 className="text-3xl font-bold bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                  {PERSONAL_INFO.name.split(' ')[1]}
                 </h3>
                 <p className="text-gray-400 mt-2 max-w-sm text-sm leading-relaxed">
                   {PERSONAL_INFO.tagline}
@@ -113,14 +113,14 @@ const Footer = () => {
             {/* Column 1: Copyright - Left Aligned */}
             <div className="flex-1 text-left">
               <p className="text-gray-500 text-sm md:text-base whitespace-nowrap">
-                © {new Date().getFullYear()} <span className="text-gray-300">{PERSONAL_INFO.name}</span>.
+                © -{new Date().getFullYear()} <span className="text-gray-300">{PERSONAL_INFO.name} . All Right Reserved</span>.
               </p>
             </div>
 
             {/* Column 2: Local Time - Center Aligned */}
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-3 font-mono tracking-widest text-gray-400 group">
-                <Clock className="w-5 h-5 text-[#8DFF69] group-hover:rotate-12 transition-transform" />
+                <Clock className="w-5 h-5 text-primary group-hover:rotate-12 transition-transform" />
                 <span className="text-sm md:text-lg font-bold whitespace-nowrap">
                   {currentTime.toLocaleTimeString([], {
                     hour: '2-digit',
