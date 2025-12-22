@@ -106,19 +106,33 @@ const Footer = () => {
           </FadeIn>
         </div>
 
-        
         {/* Bottom Bar with Time */}
-<FadeIn delay={500}>
-  <div className="pt-8 border-t border-white/5 flex flex-col items-center justify-center gap-6 text-center">
-    
-    {/* Copyright Text */}
-    <p className="text-gray-400 text-sm md:text-base">
-      © {new Date().getFullYear()} <span className="text-[#8DFF69] font-medium">{PERSONAL_INFO.name}</span>. All Rights Reserved.
-    </p>
-    
-    <div className="flex flex-col items-center gap-4">
-      {/* Built with section */}
-      <div className="flex items-center gap-2 text-sm md:text-base text-gray-400">
+  <FadeIn delay={500}>
+  <div className="pt-8 border-t border-white/5">
+    <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center md:text-left">
+
+      {/* Left: Copyright */}
+      <p className="text-gray-400 text-sm md:text-base">
+        © {new Date().getFullYear()}{" "}
+        <span className="text-gray-300">{PERSONAL_INFO.name}</span>.  
+        All Rights Reserved.
+      </p>
+
+      {/* Center: Time */}
+      <div className="flex items-center justify-center gap-3 font-mono tracking-widest text-gray-500">
+        <Clock className="w-5 h-5 text-[#8DFF69]" />
+        <span className="text-sm md:text-lg font-bold">
+          {currentTime.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
+          })}
+        </span>
+      </div>
+
+      {/* Right: Built with */}
+      <div className="flex items-center justify-center md:justify-end gap-2 text-sm md:text-base text-gray-400">
         <span>Built with</span>
         <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
         <span>using</span>
@@ -126,22 +140,11 @@ const Footer = () => {
           React & Tailwind
         </span>
       </div>
-      
-      {/* Local Time Section - Specific Format */}
-      <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-900/30 border border-white/5 text-gray-300 font-mono tracking-widest text-sm md:text-base">
-        <Clock className="w-4 h-4 text-[#8DFF69]" />
-        <span className="uppercase">
-          Local Time: {currentTime.toLocaleTimeString([], { 
-            hour: '2-digit', 
-            minute: '2-digit', 
-            second: '2-digit',
-            hour12: true 
-          }).replace(/(AM|PM)/, (match) => ` ${match}`)}
-        </span>
-      </div>
+
     </div>
   </div>
 </FadeIn>
+
       </div>
     </footer>
   );
