@@ -90,7 +90,7 @@ const Skills = () => {
                                                 {/* Progress Bar */}
                                                 <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
                                                     <div 
-                                                        className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000"
+                                                        className="h-full bg-linear-to-r from-cyan-500 to-blue-500 transition-all duration-1000"
                                                         style={{ width: `${proficiency}%` }}
                                                     ></div>
                                                 </div>

@@ -58,8 +58,8 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-[#030712]">
       {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn delay={0}>
@@ -68,7 +68,7 @@ const Contact = () => {
               <MessageSquare className="w-4 h-4" />
               <span className="tracking-wider uppercase">Get in touch</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-linear-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
               Let's work together
             </h2>
             <p className="text-gray-400 text-lg">
@@ -81,7 +81,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* LEFT SIDE */}
           <FadeIn delay={0.2} direction="left">
-            <div className="bg-white/[0.03] border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-8">
+            <div className="bg-white/3 border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-8">
               <h3 className="text-2xl font-bold text-white">
                 Contact Information
               </h3>
@@ -148,7 +148,7 @@ const Contact = () => {
           <FadeIn delay={0.4} direction="right">
             <form
               onSubmit={handleSubmit}
-              className="bg-white/[0.03] border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-6"
+              className="bg-white/3 border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input

@@ -7,13 +7,13 @@ import {
   MapPin,
   Heart,
   ExternalLink,
-  Clock // সময় বোঝাতে আইকনটি যোগ করা হয়েছে
+  Clock
 } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS, NAV_LINKS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
 
 const Footer = () => {
-  // সময় আপডেট করার জন্য স্টেট
+
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Footer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // সময় ফরম্যাট করার ফাংশন
+
   const formatTime = (date) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   };
