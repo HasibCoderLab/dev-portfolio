@@ -32,7 +32,7 @@ const Footer = () => {
     <footer className="py-20 border-t border-white/5 bg-[#030712]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          
+
           {/* Left Side: Info */}
           <FadeIn delay={100}>
             <div className="space-y-6">
@@ -72,8 +72,8 @@ const Footer = () => {
                 <ul className="space-y-4">
                   {NAV_LINKS.map((link) => (
                     <li key={link.id}>
-                      <a 
-                        href={`#${link.id}`} 
+                      <a
+                        href={`#${link.id}`}
                         className="text-gray-400 hover:text-cyan-400 text-sm transition-all flex items-center gap-2 group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-gray-700 group-hover:bg-cyan-500 transition-colors" />
@@ -90,60 +90,62 @@ const Footer = () => {
           {/* Right: Social Connect */}
           <FadeIn delay={300}>
             <div className="flex flex-col md:items-end">
-                <h4 className="text-white font-semibold mb-6">Social Connect</h4>
-                <div className="flex gap-4">
-                  <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
-                    <Github className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                  </a>
-                  <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
-                    <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                  </a>
-                  <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
-                    <Twitter className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                  </a>
-                </div>
+              <h4 className="text-white font-semibold mb-6">Social Connect</h4>
+              <div className="flex gap-4">
+                <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
+                  <Github className="w-6 h-6 text-gray-400 group-hover:text-white" />
+                </a>
+                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
+                  <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-white" />
+                </a>
+                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer" className="p-3 bg-gray-900 border border-white/10 rounded-2xl hover:border-cyan-500/50 hover:scale-110 transition-all group">
+                  <Twitter className="w-6 h-6 text-gray-400 group-hover:text-white" />
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>
 
         {/* Bottom Bar with Time */}
-  <FadeIn delay={500}>
-  <div className="pt-8 border-t border-white/5">
-    <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center md:text-left">
+        <FadeIn delay={500}>
+          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
 
-      {/* Left: Copyright */}
-      <p className="text-gray-400 text-sm md:text-base">
-        © {new Date().getFullYear()}{" "}
-        <span className="text-gray-300">{PERSONAL_INFO.name}</span>.  
-        All Rights Reserved.
-      </p>
+            {/* Column 1: Copyright - Left Aligned */}
+            <div className="flex-1 text-left">
+              <p className="text-gray-500 text-sm md:text-base whitespace-nowrap">
+                © {new Date().getFullYear()} <span className="text-gray-300">{PERSONAL_INFO.name}</span>.
+              </p>
+            </div>
 
-      {/* Center: Time */}
-      <div className="flex items-center justify-center gap-3 font-mono tracking-widest text-gray-500">
-        <Clock className="w-5 h-5 text-[#8DFF69]" />
-        <span className="text-sm md:text-lg font-bold">
-          {currentTime.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: true,
-          })}
-        </span>
-      </div>
+            {/* Column 2: Local Time - Center Aligned */}
+            <div className="flex-1 flex justify-center">
+              <div className="flex items-center gap-3 font-mono tracking-widest text-gray-400 group">
+                <Clock className="w-5 h-5 text-[#8DFF69] group-hover:rotate-12 transition-transform" />
+                <span className="text-sm md:text-lg font-bold whitespace-nowrap">
+                  {currentTime.toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                  }).split(' ').map((part, i) => i === 0 ? part.replace(/:/g, ' : ') : part).join(' ')}
+                </span>
+              </div>
+            </div>
 
-      {/* Right: Built with */}
-      <div className="flex items-center justify-center md:justify-end gap-2 text-sm md:text-base text-gray-400">
-        <span>Built with</span>
-        <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
-        <span>using</span>
-        <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-semibold text-xs md:text-sm">
-          React & Tailwind
-        </span>
-      </div>
+            {/* Column 3: Built with - Right Aligned */}
+            <div className="flex-1 flex justify-end">
+              <div className="flex items-center gap-2 text-sm md:text-base text-gray-500 whitespace-nowrap">
+                <span>Built with</span>
+                <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
+                <span>using</span>
+                <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-semibold text-xs md:text-sm">
+                  React & Tailwind
+                </span>
+              </div>
+            </div>
 
-    </div>
-  </div>
-</FadeIn>
+          </div>
+        </FadeIn>
 
       </div>
     </footer>
