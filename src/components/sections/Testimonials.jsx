@@ -112,7 +112,7 @@ const Testimonials = () => {
                                             "{testimonial.quote}"
                                         </p>
 
-                                        {/* 🔥 IMAGE + NAME (CENTER, QUOTE এর নিচে) */}
+                                        {/* 🔥 IMAGE + NAME  */}
                                         <div className="flex flex-col items-center text-center mt-auto">
                                             <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/30 mb-4">
                                                 <img

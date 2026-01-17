@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 import { Briefcase, Sparkles, Target, Globe, Palette, Zap, ChevronLeft, ChevronRight } from "lucide-react";
-import { projects, categories } from '../../data/projects'; 
+import { projects, categories } from '../../data/projects';
 import FadeIn from "../animations/FadeIn";
 import ProjectCard from '../ui/ProjectCard';
 
@@ -27,7 +27,7 @@ const Projects = () => {
         setCurrentIndex(index);
         if (scrollContainerRef.current) {
             const container = scrollContainerRef.current;
-            const cardWidth = container.offsetWidth / 3; 
+            const cardWidth = container.offsetWidth / 3;
             container.scrollTo({
                 left: cardWidth * index,
                 behavior: 'smooth'
@@ -52,14 +52,14 @@ const Projects = () => {
         'JavaScript': Zap,
         'TypeScript': Sparkles,
         'Frontend': Palette,
-        'Next.js': Globe, 
+        'Next.js': Globe,
     };
 
     return (
         <section id="projects" className="py-20 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/5 to-transparent" />
+                <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-primary/5 to-transparent" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -81,18 +81,16 @@ const Projects = () => {
                             <button
                                 key={category}
                                 onClick={() => handleCategoryChange(category)}
-                                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                                    activeCategory === category
+                                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category
                                         ? 'text-white'
                                         : 'text-white/60 hover:text-white'
-                                }`}
+                                    }`}
                             >
-                                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                                    activeCategory === category
+                                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${activeCategory === category
                                         ? 'bg-primary/20 border-primary/50'
                                         : 'bg-white/5 border border-white/10 group-hover:bg-white/10'
-                                }`} />
-                                
+                                    }`} />
+
                                 <div className="relative flex items-center gap-2">
                                     {categoryIcons[category] && React.createElement(categoryIcons[category], { className: 'w-4 h-4' })}
                                     <span>{category}</span>
@@ -105,7 +103,7 @@ const Projects = () => {
                 {/* Project Carousel */}
                 <FadeIn delay={0.4}>
                     <div className="relative group">
-                        <div 
+                        <div
                             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
                             ref={scrollContainerRef}
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -128,11 +126,10 @@ const Projects = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className={`absolute top-1/2 -left-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                        currentIndex === 0 
-                                        ? 'bg-white/5 text-white/20 cursor-not-allowed' 
-                                        : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
-                                    }`}
+                                    className={`absolute top-1/2 -left-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${currentIndex === 0
+                                            ? 'bg-white/5 text-white/20 cursor-not-allowed'
+                                            : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
+                                        }`}
                                     aria-label="Previous projects"
                                 >
                                     <ChevronLeft className="w-5 h-5" />
@@ -141,11 +138,10 @@ const Projects = () => {
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex >= filteredProjects.length - 3}
-                                    className={`absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                        currentIndex >= filteredProjects.length - 3
-                                        ? 'bg-white/5 text-white/20 cursor-not-allowed'
-                                        : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
-                                    }`}
+                                    className={`absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${currentIndex >= filteredProjects.length - 3
+                                            ? 'bg-white/5 text-white/20 cursor-not-allowed'
+                                            : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
+                                        }`}
                                     aria-label="Next projects"
                                 >
                                     <ChevronRight className="w-5 h-5" />
@@ -160,11 +156,10 @@ const Projects = () => {
                                     <button
                                         key={index}
                                         onClick={() => scrollToIndex(index)}
-                                        className={`transition-all duration-300 rounded-full ${
-                                            index === currentIndex
+                                        className={`transition-all duration-300 rounded-full ${index === currentIndex
                                                 ? 'bg-primary w-6 h-2'
                                                 : 'bg-white/20 w-2 h-2 hover:bg-white/50'
-                                        }`}
+                                            }`}
                                         aria-label={`Go to slide ${index + 1}`}
                                     />
                                 ))}
