@@ -32,7 +32,7 @@ const Hero = () => {
   </p>
 
   {/* Typing Animation */}
-  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r  via-purple-400 from-cyan-400 ">
+  <div className="text-3xl md:text-4xl lg:text-5xl font-bold  bg-clip-text text-white  ">
     <Typewriter
       options={{
         strings: [
