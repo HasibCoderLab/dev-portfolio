@@ -36,14 +36,14 @@ const Services = () => {
               <FadeIn key={service.id} delay={index * 100}>
                 <div className="p-6 rounded-2xl bg-gray-900/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 group">
 
-                <div className="relative mb-6 w-12 h-12 flex items-center justify-center rounded-xl bg-gray-800 group">
-  
-  {/* Subtle wave rings */}
-  <span className="absolute inset-0 rounded-xl border border-cyan-500/30 opacity-0 group-hover:opacity-100 animate-wave" />
-  <span className="absolute inset-0 rounded-xl border border-cyan-500/20 opacity-0 group-hover:opacity-100 animate-wave delay-1" />
+                  <div className="relative mb-6 w-12 h-12 flex items-center justify-center rounded-xl bg-gray-800 group">
 
-  <IconComponent className="relative z-10 w-6 h-6 text-cyan-400" />
-</div>
+                    {/* Subtle wave rings */}
+                    <span className="absolute inset-0 rounded-xl border border-cyan-500/30 opacity-0 group-hover:opacity-100 animate-wave" />
+                    <span className="absolute inset-0 rounded-xl border border-cyan-500/20 opacity-0 group-hover:opacity-100 animate-wave delay-1" />
+
+                    <IconComponent className="relative z-10 w-6 h-6 text-cyan-400" />
+                  </div>
 
 
                   {/* Text */}
