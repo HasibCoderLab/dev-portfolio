@@ -1,4 +1,5 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
 import { Star, ChevronDown } from "lucide-react";
 import { PERSONAL_INFO, STATS } from "../../utils/constants";
@@ -28,8 +29,22 @@ const Hero = () => {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 leading-tight">
-                  Next.js Developer
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "It's me Mohammad Hasib Hasan",
+                        "And I'm a Web Application Developer",
+                        "Next.js Developer",
+                        "React | Tailwind | Node.js | MongoDB"
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 50,
+                      deleteSpeed: 30,
+                    }}
+                  />
                 </h1>
+
                 <p className="text-lg text-white/70 mb-6 max-w-[500px]">
                   Building modern, scalable web applications with cutting-edge technologies.
                 </p>
@@ -102,6 +117,10 @@ const Hero = () => {
       >
         <ChevronDown className="w-8 h-8 text-cyan-400" />
       </button>
+
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
     </section>
   );
 };
