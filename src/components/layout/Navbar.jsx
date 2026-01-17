@@ -25,7 +25,6 @@ const Navbar = () => {
         ? 'bg-black/30 backdrop-blur-lg border-b border-white/10'
         : 'bg-transparent'
         }`}
-      style={{ transform: 'translate3d(0, 0, 0)' }}
     >
       <div className='max-w-7xl mx-auto px-5'>
         <div className='flex items-center justify-between'>
@@ -35,25 +34,36 @@ const Navbar = () => {
             <Code className="w-6 h-6 text-primary" />
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer"
-              aria-label="home"
+              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               {PERSONAL_INFO.name.split(' ')[1]}
             </button>
           </div>
 
           {/* Desktop Links */}
-          <div className='hidden md:flex items-center gap-7'>
+          <div className='hidden md:flex items-center gap-6'>
             {NAV_LINKS.map(link => (
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`text-base font-medium transition-all duration-300 cursor-pointer ${activeSection === link.id
-                  ? 'text-white'
-                  : 'text-white/70 hover:text-white'
-                  }`}
+                className={`
+                  relative px-4 py-2 font-medium text-base transition-all duration-300
+                  rounded-full
+                  ${activeSection === link.id
+                    ? "text-white bg-primary/20 border-b-2 border-primary"
+                    : "text-white/70 hover:text-white hover:bg-primary/10"}
+                `}
               >
                 {link.label}
+                {/* Glow effect */}
+                <span
+                  className={`
+                    absolute inset-0 rounded-full opacity-0
+                    ${activeSection === link.id
+                      ? "bg-primary/20 animate-glow"
+                      : "group-hover:opacity-30 bg-primary/10"}
+                  `}
+                />
               </button>
             ))}
           </div>
@@ -62,7 +72,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-2">
             <button
               onClick={() => handleNavClick('contact')}
-              className="px-7 py-3.5 bg-primary/18 text-white font-medium text-base rounded-[17px] cursor-pointer border border-primary hover:bg-primary/70 transition-all duration-300"
+              className="px-7 py-3.5 bg-primary/30 text-white font-medium text-base rounded-full border border-primary hover:bg-primary/90 transition-all duration-300"
             >
               Hire Me
             </button>
@@ -71,9 +81,7 @@ const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-white/80 transition-colors cursor-pointer"
-            aria-label="menu"
-            aria-expanded={isMenuOpen}
+            className="md:hidden text-white hover:text-white/80 transition-colors"
           >
             {isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
           </button>
@@ -89,10 +97,12 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.id
-                  ? "text-white bg-primary/20"
-                  : "text-white/70 hover:text-white hover:bg-primary/10"
-                }`}
+              className={`
+                block w-full text-left px-4 py-3 font-medium transition-all duration-300 rounded-full
+                ${activeSection === link.id
+                  ? "text-white bg-primary/20 border-b-2 border-cyan-400"
+                  : "text-white/70 hover:text-white hover:bg-primary/10"}
+              `}
             >
               {link.label}
             </button>
@@ -100,7 +110,7 @@ const Navbar = () => {
 
           <button
             onClick={() => handleNavClick('contact')}
-            className='w-full px-7 py-3.5 bg-primary text-white font-medium text-base rounded-[17px] border border-primary hover:bg-primary/90 duration-300 mt-2 cursor-pointer'
+            className='w-full px-7 py-3.5 bg-primary/20 text-white font-medium text-base rounded-full border border-primary hover:bg-primary/90 duration-300 mt-2'
           >
             Hire Me
           </button>
