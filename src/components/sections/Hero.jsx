@@ -18,49 +18,56 @@ const Hero = () => {
 
           {/* Left Column */}
           <div className="space-y-8">
-            {/* Intro Card */}
             <FadeIn delay={0}>
-              <div className="p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-                <div className="inline-flex items-center gap-2.5 px-4 py-2 mb-6 bg-primary/10 border border-primary/20 rounded-full">
-                  <Star className="w-4 h-4 text-primary" />
-                  <span className="text-xs text-white/70 tracking-[1.2px]">
-                    {PERSONAL_INFO.title} | {PERSONAL_INFO.location}
-                  </span>
-                </div>
+              {/* Name & Intro */}
+<div className="space-y-4 text-white">
+  {/* Name */}
+  <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+    Hasib Hasan
+  </h1>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
-                  <Typewriter
-                    options={{
-                      strings: [
-                        "It's me Mohammad Hasib Hasan",
-                        "And I'm a Web Application Developer",
-                        "Next.js Developer",
-                        "React | Tailwind | Node.js | MongoDB"
-                      ],
-                      autoStart: true,
-                      loop: true,
-                      delay: 50,
-                      deleteSpeed: 30,
-                    }}
-                  />
-                </h1>
+  {/* "And I'm a" */}
+  <p className="text-lg md:text-xl font-semibold text-gray-300 relative left-8">
+    And I'm a
+  </p>
 
-                <p className="text-lg text-gray-400 mb-6 max-w-[500px]">
+  {/* Typing Animation */}
+  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r  via-purple-400 from-cyan-400 ">
+    <Typewriter
+      options={{
+        strings: [
+          "Web Developer",
+          "React Developer",
+          "MERN Stack Developer",
+          "Next.js Developer",
+          "React | Tailwind | Node.js | MongoDB"
+        ],
+        autoStart: true,
+        loop: true,
+        delay: 50,
+        deleteSpeed: 30,
+      }}
+    />
+  </div>
+
+
+
+                <p className="text-lg text-gray-400 mt-6 max-w-[500px]">
                   Building modern, scalable web applications with cutting-edge technologies.
                 </p>
 
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/20 text-primary hover:bg-primary/10 transition-all font-medium"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/20 text-primary hover:bg-primary/10 transition-all font-medium mt-4"
                 >
                   Get in Touch
                 </button>
               </div>
             </FadeIn>
 
-            {/* Stats Card */}
+            {/* Stats */}
             <FadeIn delay={200}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
                 {STATS.map((stat, i) => (
                   <div
                     key={i}
