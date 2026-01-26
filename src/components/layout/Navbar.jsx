@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Code, Menu, X } from "lucide-react"
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Code, Menu, X, ArrowRight } from "lucide-react";
 import { scrollToSection, useScrollspy } from "../../hooks/useScrollSpy.js";
-import { NAV_LINKS, PERSONAL_INFO } from "../../utils/constants.js"
+import { NAV_LINKS, PERSONAL_INFO } from "../../utils/constants.js";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
   const activeSection = useScrollspy(NAV_LINKS.map(link => link.id));
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -17,107 +18,106 @@ const Navbar = () => {
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId);
     setIsMenuOpen(false);
-  }
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 w-full py-4 transition-all duration-300 ${isScrolled
-        ? 'bg-black/30 backdrop-blur-lg border-b border-white/10'
-        : 'bg-transparent'
-        }`}
-    >
-      <div className='max-w-7xl mx-auto px-5'>
-        <div className='flex items-center justify-between'>
+    // 'mt-6' diye upore gap deya hoyeche jate floating lage
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 mt-4 md:mt-6 px-4`}>
+      <div className={`max-w-7xl mx-auto flex items-center justify-between transition-all duration-300 ${
+        isScrolled ? 'px-2' : 'px-0'
+      }`}>
+        
+        {/* Left Side: Empty/Spacer for balance (Desktop) */}
+        <div className="hidden lg:block w-[150px]"></div>
 
-          {/* Logo */}
-          <div className="flex items-center gap-4">
-            <Code className="w-6 h-6 text-primary" />
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            >
-              {PERSONAL_INFO.name.split(' ')[1]}
-            </button>
-          </div>
+        {/* Center: Integrated Logo & Navigation */}
+        <div className={`flex items-center gap-2 p-1.5 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500 ${
+          isScrolled ? 'bg-black/60 shadow-2xl shadow-primary/10' : 'bg-white/5'
+        }`}>
+          
+          {/* Logo integrated inside the pill */}
+          <motion.div 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2 pl-3 pr-4 py-1.5 border-r border-white/10 cursor-pointer group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors">
+              <Code className="w-4 h-4 text-primary group-hover:text-white" />
+            </div>
+            <span className="text-white font-bold tracking-tight text-sm">
+              {PERSONAL_INFO.name.split(' ')[1].toUpperCase()}
+            </span>
+          </motion.div>
 
           {/* Desktop Links */}
-          <div className='hidden md:flex items-center gap-6'>
-            {NAV_LINKS.map(link => (
+          <div className='hidden md:flex items-center '>
+            {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`
-                  relative px-4 py-2 font-medium text-base transition-all duration-300
-                  rounded-full
-                  ${activeSection === link.id
-                    ? "text-white bg-primary/20 border-b-2 border-primary"
-                    : "text-white/70 hover:text-white hover:bg-primary/10"}
-                `}
+                className={`relative px-4 py-2 text-xs font-bold transition-all duration-300 rounded-full ${
+                  activeSection === link.id ? "text-white" : "text-gray-400 hover:text-white"
+                }`}
               >
-                {link.label}
-                {/* Glow effect */}
-                <span
-                  className={`
-                    absolute inset-0 rounded-full opacity-0
-                    ${activeSection === link.id
-                      ? "bg-primary/20 animate-glow"
-                      : "group-hover:opacity-30 bg-primary/10"}
-                  `}
-                />
+                {activeSection === link.id && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 bg-white/10 border border-white/5 rounded-full"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
               </button>
             ))}
           </div>
 
-          {/* Hire Me Button */}
-          <div className="hidden md:flex items-center gap-2">
-            <button
-              onClick={() => handleNavClick('contact')}
-              className="px-7 py-3.5 bg-primary/30 text-white font-medium text-base rounded-full border border-primary hover:bg-primary/90 transition-all duration-300"
-            >
-              Hire Me
-            </button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle (Inside pill) */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-white/80 transition-colors"
+            className="md:hidden p-2 text-white"
           >
-            {isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+            {isMenuOpen ? <X className='w-5 h-5' /> : <Menu className='w-5 h-5' />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
-      >
-        <div className='bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-6 space-y-3'>
-          {NAV_LINKS.map(link => (
-            <button
-              key={link.id}
-              onClick={() => handleNavClick(link.id)}
-              className={`
-                block w-full text-left px-4 py-3 font-medium transition-all duration-300 rounded-full
-                ${activeSection === link.id
-                  ? "text-white bg-primary/20 border-b-2 border-cyan-400"
-                  : "text-white/70 hover:text-white hover:bg-primary/10"}
-              `}
-            >
-              {link.label}
-            </button>
-          ))}
-
+        {/* Right Side: Hire Me Button */}
+        <div className="hidden lg:block w-[150px] text-right">
           <button
             onClick={() => handleNavClick('contact')}
-            className='w-full px-7 py-3.5 bg-primary/20 text-white font-medium text-base rounded-full border border-primary hover:bg-primary/90 duration-300 mt-2'
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-black text-xs font-black rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] active:scale-95"
           >
-            Hire Me
+            HIRE ME
+            <ArrowRight className="w-3 h-3" />
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            className="md:hidden mt-4 bg-black/90 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-3xl"
+          >
+            <div className="p-6 space-y-2">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link.id)}
+                  className={`block w-full text-left text-sm font-bold py-3 px-4 rounded-xl ${
+                    activeSection === link.id ? "text-primary bg-primary/10" : "text-gray-400 hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

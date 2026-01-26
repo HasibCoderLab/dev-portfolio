@@ -1,52 +1,16 @@
-import React, { useState, useRef } from "react";
-
-import { Briefcase, Sparkles, Target, Globe, Palette, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Briefcase, Sparkles, Target, Globe, Palette, Zap } from "lucide-react";
 import { projects, categories } from '../../data/projects';
-
 import ProjectCard from '../ui/ProjectCard';
 
 const Projects = () => {
     const [activeCategory, setActiveCategory] = useState('All');
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const scrollContainerRef = useRef(null);
 
     const filteredProjects = activeCategory === 'All'
         ? projects
         : projects.filter(project => project.category === activeCategory);
 
-    // Reset carousel when category changes
-    const handleCategoryChange = (category) => {
-        setActiveCategory(category);
-        setCurrentIndex(0);
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-    }
-
-    const scrollToIndex = (index) => {
-        setCurrentIndex(index);
-        if (scrollContainerRef.current) {
-            const container = scrollContainerRef.current;
-            const cardWidth = container.offsetWidth / 3;
-            container.scrollTo({
-                left: cardWidth * index,
-                behavior: 'smooth'
-            })
-        }
-    }
-
-    const nextSlide = () => {
-        const maxIndex = Math.max(0, filteredProjects.length - 3);
-        const newIndex = Math.min(currentIndex + 1, maxIndex);
-        scrollToIndex(newIndex);
-    };
-
-    const prevSlide = () => {
-        const newIndex = Math.max(currentIndex - 1, 0);
-        scrollToIndex(newIndex);
-    };
-
-    // Category Icons Mapping
     const categoryIcons = {
         'All': Target,
         'JavaScript': Zap,
@@ -56,117 +20,92 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="py-20 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-primary/5 to-transparent" />
-            </div>
+        <section id="projects" className="py-24 relative bg-[#030712]">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
-                
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-sm mb-4">
-                            <Briefcase className="w-4 h-4" />
-                            <span className="font-medium">My Work</span>
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-                        <p className="text-white/60 text-lg">Showcase my best work and achievements</p>
+                {/* Header */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center max-w-2xl mx-auto mb-16"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-semibold mb-6">
+                        <Briefcase className="w-4 h-4" />
+                        <span className="uppercase tracking-widest text-[10px]">My Portfolio</span>
                     </div>
-             
+                    <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
+                        Featured <span className="text-primary">Projects</span>
+                    </h2>
+                    <p className="text-gray-400 text-lg leading-relaxed">
+                        Explore my latest work, from interactive web apps to complex full-stack solutions.
+                    </p>
+                </motion.div>
 
                 {/* Category Filter */}
-               
-                    <div className="flex flex-wrap justify-center gap-3 mb-12">
-                        {categories.map((category) => (
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex flex-wrap justify-center gap-3 mb-16"
+                >
+                    {categories.map((category) => {
+                        const Icon = categoryIcons[category] || Target;
+                        const isActive = activeCategory === category;
+                        
+                        return (
                             <button
                                 key={category}
-                                onClick={() => handleCategoryChange(category)}
-                                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category
-                                        ? 'text-white'
-                                        : 'text-white/60 hover:text-white'
-                                    }`}
+                                onClick={() => setActiveCategory(category)}
+                                className={`group relative px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${
+                                    isActive ? 'text-white' : 'text-gray-500 hover:text-gray-300'
+                                }`}
                             >
-                                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${activeCategory === category
-                                        ? 'bg-primary/20 border-primary/50'
-                                        : 'bg-white/5 border border-white/10 group-hover:bg-white/10'
-                                    }`} />
-
-                                <div className="relative flex items-center gap-2">
-                                    {categoryIcons[category] && React.createElement(categoryIcons[category], { className: 'w-4 h-4' })}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="activeCategory"
+                                        className="absolute inset-0 bg-primary border border-primary/50 rounded-2xl shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)]"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                <div className="relative z-10 flex items-center gap-2">
+                                    <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'group-hover:text-primary'}`} />
                                     <span>{category}</span>
                                 </div>
                             </button>
+                        );
+                    })}
+                </motion.div>
+
+                {/* Projects Grid */}
+                <motion.div 
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <AnimatePresence mode="popLayout">
+                        {filteredProjects.map((project) => (
+                            <motion.div
+                                key={project.id}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.4 }}
+                            >
+                                <ProjectCard project={project} />
+                            </motion.div>
                         ))}
+                    </AnimatePresence>
+                </motion.div>
+
+                {/* View More Button (Optional) */}
+                {filteredProjects.length === 0 && (
+                    <div className="text-center py-20">
+                        <p className="text-gray-500 italic">No projects found in this category.</p>
                     </div>
-              
-
-                {/* Project Carousel */}
-               
-                    <div className="relative group">
-                        <div
-                            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
-                            ref={scrollContainerRef}
-                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                        >
-                            <div className="flex gap-6">
-                                {filteredProjects.map((project) => (
-                                    <div
-                                        key={project.id}
-                                        className="w-[300px] md:w-[350px] flex-shrink-0 snap-start"
-                                    >
-                                        <ProjectCard project={project} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Navigation Arrows */}
-                        {filteredProjects.length > 3 && (
-                            <>
-                                <button
-                                    onClick={prevSlide}
-                                    disabled={currentIndex === 0}
-                                    className={`absolute top-1/2 -left-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${currentIndex === 0
-                                            ? 'bg-white/5 text-white/20 cursor-not-allowed'
-                                            : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
-                                        }`}
-                                    aria-label="Previous projects"
-                                >
-                                    <ChevronLeft className="w-5 h-5" />
-                                </button>
-
-                                <button
-                                    onClick={nextSlide}
-                                    disabled={currentIndex >= filteredProjects.length - 3}
-                                    className={`absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${currentIndex >= filteredProjects.length - 3
-                                            ? 'bg-white/5 text-white/20 cursor-not-allowed'
-                                            : 'bg-white/10 text-white hover:bg-primary hover:scale-110 backdrop-blur-sm'
-                                        }`}
-                                    aria-label="Next projects"
-                                >
-                                    <ChevronRight className="w-5 h-5" />
-                                </button>
-                            </>
-                        )}
-
-                        {/* Navigation Dots */}
-                        {filteredProjects.length > 3 && (
-                            <div className="flex justify-center gap-2 mt-8">
-                                {Array.from({ length: Math.max(0, filteredProjects.length - 2) }).map((_, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => scrollToIndex(index)}
-                                        className={`transition-all duration-300 rounded-full ${index === currentIndex
-                                                ? 'bg-primary w-6 h-2'
-                                                : 'bg-white/20 w-2 h-2 hover:bg-white/50'
-                                            }`}
-                                        aria-label={`Go to slide ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
-                        )}
-                    </div>
-            
+                )}
             </div>
         </section>
     );
