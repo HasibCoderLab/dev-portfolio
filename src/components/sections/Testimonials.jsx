@@ -6,7 +6,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { testimonials as testimonialData } from "../../data/testimonials";
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,7 +54,7 @@ const Testimonials = () => {
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[200px] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <FadeIn>
+        < >
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
               <Quote className="w-4 h-4 fill-primary" />
@@ -67,9 +67,9 @@ const Testimonials = () => {
               Empowering clients with logical solutions and high-quality craftsmanship.
             </p>
           </div>
-        </FadeIn>
+        </ >
 
-        <FadeIn delay={0.2}>
+        <  delay={0.2}>
           <div className="relative max-w-6xl mx-auto">
             {/* Carousel */}
             <div
@@ -169,7 +169,7 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
-        </FadeIn>
+        </ >
       </div>
     </section>
   );

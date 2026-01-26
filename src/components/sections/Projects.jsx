@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 
 import { Briefcase, Sparkles, Target, Globe, Palette, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects, categories } from '../../data/projects';
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 import ProjectCard from '../ui/ProjectCard';
 
 const Projects = () => {
@@ -63,7 +63,7 @@ const Projects = () => {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <FadeIn delay={0}>
+                <  delay={0}>
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-sm mb-4">
                             <Briefcase className="w-4 h-4" />
@@ -72,10 +72,10 @@ const Projects = () => {
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
                         <p className="text-white/60 text-lg">Showcase my best work and achievements</p>
                     </div>
-                </FadeIn>
+                </ >
 
                 {/* Category Filter */}
-                <FadeIn delay={0.2}>
+                <  delay={0.2}>
                     <div className="flex flex-wrap justify-center gap-3 mb-12">
                         {categories.map((category) => (
                             <button
@@ -98,10 +98,10 @@ const Projects = () => {
                             </button>
                         ))}
                     </div>
-                </FadeIn>
+                </ >
 
                 {/* Project Carousel */}
-                <FadeIn delay={0.4}>
+                <  delay={0.4}>
                     <div className="relative group">
                         <div
                             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
@@ -166,7 +166,7 @@ const Projects = () => {
                             </div>
                         )}
                     </div>
-                </FadeIn>
+                </ >
             </div>
         </section>
     );

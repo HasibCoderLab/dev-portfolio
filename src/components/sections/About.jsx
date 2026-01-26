@@ -1,7 +1,7 @@
 import * as Icons from "lucide-react";
 import { Download, Code2, Sparkles } from "lucide-react";
 import { PERSONAL_INFO, ABOUT_STATS } from "../../utils/constants";
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 
 const skills = [
   // { name: "React.js", icon: Icons.React, color: "#61DAFB" },
@@ -23,7 +23,7 @@ const About = () => {
       <div className="container mx-auto px-4 relative z-10">
 
         {/* Header */}
-        <FadeIn delay={100}>
+        <  delay={100}>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Sparkles className="text-yellow-400" />
@@ -31,13 +31,13 @@ const About = () => {
             </div>
             <h2 className="text-4xl font-bold text-white">Who I Am</h2>
           </div>
-        </FadeIn>
+        </ >
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Left Content */}
-          <FadeIn delay={200}>
+          <  delay={200}>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-6 backdrop-blur-md">
               <h3 className="text-xl font-semibold text-white">Full-Stack Developer</h3>
               <div className="space-y-4 text-white/70 leading-relaxed">
@@ -51,7 +51,7 @@ const About = () => {
                 Download Resume
               </button>
             </div>
-          </FadeIn>
+          </ >
 
           {/* Right Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -63,7 +63,7 @@ const About = () => {
             ].map((item, index) => {
               const Icon = item.icon;
               return (
-                <FadeIn key={index} delay={300 + index * 100}>
+                <  key={index} delay={300 + index * 100}>
                   <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -73,14 +73,14 @@ const About = () => {
                     </div>
                     <p className="text-sm text-white/70">{item.text}</p>
                   </div>
-                </FadeIn>
+                </ >
               );
             })}
           </div>
         </div>
 
         {/* Tech Stack */}
-        <FadeIn delay={600}>
+        <  delay={600}>
           <div className="mt-16 flex flex-col items-center gap-8">
             <div className="text-center">
               <h3 className="text-2xl font-normal text-white mb-2">Tech Stack & Expertise</h3>
@@ -99,10 +99,10 @@ const About = () => {
               })}
             </div>
           </div>
-        </FadeIn>
+        </ >
 
         {/* Stats */}
-        <FadeIn delay={900}>
+        <  delay={900}>
           <div className="grid grid-cols-3 gap-6 mt-16">
             {ABOUT_STATS.map((stat, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center backdrop-blur-md">
@@ -111,7 +111,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </FadeIn>
+        </ >
 
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { services } from "../../data/services";
 import * as Icons from "lucide-react";
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 
 const Services = () => {
   return (
@@ -13,7 +13,7 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
 
         {/* Header */}
-        <FadeIn delay={100}>
+        <  delay={100}>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Icons.Wrench className="text-yellow-400" />
@@ -30,7 +30,7 @@ const Services = () => {
               Clean structure, strong logic, and performance-focused solutions
             </p>
           </div>
-        </FadeIn>
+        </ >
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -38,7 +38,7 @@ const Services = () => {
             const IconComponent = Icons[service.icon] || Icons.Code2;
 
             return (
-              <FadeIn key={service.id} delay={200 + index * 100}>
+              <  key={service.id} delay={200 + index * 100}>
                 <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 group">
 
                   <div className="relative mb-6 w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 group">
@@ -65,7 +65,7 @@ const Services = () => {
                   </div>
 
                 </div>
-              </FadeIn>
+              </ >
             );
           })}
         </div>

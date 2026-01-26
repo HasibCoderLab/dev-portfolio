@@ -9,7 +9,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "../../utils/constants";
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 
 const Contact = () => {
   // ✅ LOGIC FROM 1st CODE
@@ -62,7 +62,7 @@ const Contact = () => {
       <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <FadeIn delay={0}>
+        <  delay={0}>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-semibold mb-6 backdrop-blur-sm">
               <MessageSquare className="w-4 h-4" />
@@ -76,11 +76,11 @@ const Contact = () => {
               life.
             </p>
           </div>
-        </FadeIn>
+        </ >
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* LEFT SIDE */}
-          <FadeIn delay={0.2} direction="left">
+          <  delay={0.2} direction="left">
             <div className="bg-white/3 border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-8">
               <h3 className="text-2xl font-bold text-white">
                 Contact Information
@@ -142,10 +142,10 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </ >
 
           {/* RIGHT SIDE FORM */}
-          <FadeIn delay={0.4} direction="right">
+          <  delay={0.4} direction="right">
             <form
               onSubmit={handleSubmit}
               className="bg-white/3 border border-white/10 p-8 rounded-3xl backdrop-blur-md space-y-6"
@@ -198,7 +198,7 @@ const Contact = () => {
                 </div>
               )}
             </form>
-          </FadeIn>
+          </ >
         </div>
       </div>
     </section>

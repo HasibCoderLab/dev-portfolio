@@ -1,6 +1,6 @@
 import * as Icons from "lucide-react";
 import { skills } from "../../data/skills";
-import FadeIn from "../animations/FadeIn";
+import   from "../animations/ ";
 
 const Skills = () => {
     // Categorize skills
@@ -49,7 +49,7 @@ const Skills = () => {
             <div className="container mx-auto px-4 relative z-10">
 
                 {/* Header */}
-                <FadeIn delay={100}>
+                <  delay={100}>
                     <div className="text-center mb-16">
                         <div className="flex items-center justify-center gap-2 mb-4">
                             <Icons.Sparkles className="text-yellow-400" />
@@ -57,12 +57,12 @@ const Skills = () => {
                         </div>
                         <h2 className="text-4xl font-bold text-white">Skills & Technologies</h2>
                     </div>
-                </FadeIn>
+                </ >
 
                 {/* Skills Categories */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.entries(skillCategories).map(([category, categorySkills], idx) => (
-                        <FadeIn key={category} delay={200 + idx * 100}>
+                        <  key={category} delay={200 + idx * 100}>
                             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300">
                                 <h3 className="text-xl font-semibold mb-6 text-white">{category}</h3>
 
@@ -101,7 +101,7 @@ const Skills = () => {
                                     })}
                                 </div>
                             </div>
-                        </FadeIn>
+                        </ >
                     ))}
                 </div>
             </div>
