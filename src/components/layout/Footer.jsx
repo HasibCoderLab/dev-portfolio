@@ -10,7 +10,7 @@ import {
   Clock
 } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS, NAV_LINKS } from "../../utils/constants";
-import   from "../animations/ ";
+
 
 const Footer = () => {
 
@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
 
           {/* Left Side: Info */}
-          <  delay={100}>
+          <FadeIn delay={100}>
             <div className="space-y-6">
               <div>
                 <h3 className="text-3xl font-bold bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -62,10 +62,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </ >
+          </FadeIn>
 
           {/* Middle: Quick Links */}
-          <  delay={200}>
+          <FadeIn delay={200}>
             <div className="flex flex-col md:items-center">
               <div>
                 <h4 className="text-white font-semibold mb-6">Quick Links</h4>
@@ -85,10 +85,10 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-          </ >
+          </FadeIn>
 
           {/* Right: Social Connect */}
-          <  delay={300}>
+          <FadeIn delay={300}>
             <div className="flex flex-col md:items-end">
               <h4 className="text-white font-semibold mb-6">Social Connect</h4>
               <div className="flex gap-4">
@@ -103,11 +103,11 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-          </ >
+          </FadeIn>
         </div>
 
         {/* Bottom Bar with Time */}
-        <  delay={500}>
+        <FadeIn delay={500}>
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
 
             {/* Column 1: Copyright - Left Aligned */}
@@ -145,7 +145,7 @@ const Footer = () => {
             </div>
 
           </div>
-        </ >
+        </FadeIn>
 
       </div>
     </footer>

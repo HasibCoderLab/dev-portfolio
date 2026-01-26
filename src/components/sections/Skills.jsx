@@ -1,6 +1,7 @@
+import React from "react";
+import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { skills } from "../../data/skills";
-import   from "../animations/ ";
 
 const Skills = () => {
     // Categorize skills
@@ -32,78 +33,109 @@ const Skills = () => {
 
     const getLevelColor = (level) => {
         const colors = {
-            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
-            'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
-            'Intermediate': 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
+            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/10 border-[#8DFF69]/20',
+            'Advanced': 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+            'Intermediate': 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
         };
-        return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
+        return colors[level] || 'text-gray-400 bg-gray-500/10 border-gray-500/20';
+    };
+
+    // Animation Variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     };
 
     return (
-        <section id="skills" className="py-24 relative overflow-hidden">
+        <section id="skills" className="py-24 relative overflow-hidden bg-[#030712]">
 
-            {/* Background Glow */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
+            {/* Background Glows */}
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
 
                 {/* Header */}
-                <  delay={100}>
-                    <div className="text-center mb-16">
-                        <div className="flex items-center justify-center gap-2 mb-4">
-                            <Icons.Sparkles className="text-yellow-400" />
-                            <span className="text-sm uppercase tracking-widest text-gray-400">My Expertise</span>
-                        </div>
-                        <h2 className="text-4xl font-bold text-white">Skills & Technologies</h2>
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                        <Icons.Sparkles className="text-yellow-400 w-5 h-5" />
+                        <span className="text-sm uppercase tracking-[0.3em] text-gray-400">My Expertise</span>
                     </div>
-                </ >
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">Skills & Technologies</h2>
+                </motion.div>
 
-                {/* Skills Categories */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {Object.entries(skillCategories).map(([category, categorySkills], idx) => (
-                        <  key={category} delay={200 + idx * 100}>
-                            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300">
-                                <h3 className="text-xl font-semibold mb-6 text-white">{category}</h3>
+                {/* Skills Categories Grid */}
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    {Object.entries(skillCategories).map(([category, categorySkills]) => (
+                        <motion.div 
+                            key={category} 
+                            variants={cardVariants}
+                            className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md hover:border-primary/30 transition-colors duration-500 group"
+                        >
+                            <h3 className="text-xl font-bold mb-8 text-white flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-primary" />
+                                {category}
+                            </h3>
 
-                                {/* Skills List */}
-                                <div className="space-y-6">
-                                    {categorySkills.map(skill => {
-                                        const IconComponent = Icons[skill.icon] || Icons.Code2;
-                                        const proficiency = getProficiencyLevel(skill.level);
+                            <div className="space-y-8">
+                                {categorySkills.map(skill => {
+                                    const IconComponent = Icons[skill.icon] || Icons.Code2;
+                                    const proficiency = getProficiencyLevel(skill.level);
 
-                                        return (
-                                            <div key={skill.id}>
-                                                <div className="flex items-center justify-between mb-2">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="p-2 bg-primary/10 rounded-lg">
-                                                            <IconComponent className="w-5 h-5 text-primary" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="font-medium text-white">{skill.name}</div>
-                                                            <div className="text-xs text-white/50">{skill.experiences}</div>
-                                                        </div>
+                                    return (
+                                        <div key={skill.id} className="relative">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <div className="flex items-center gap-4">
+                                                    <div className="p-2.5 bg-white/5 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                                                        <IconComponent className="w-5 h-5 text-primary" />
                                                     </div>
-                                                    <span className={`text-[10px] px-2 py-0.5 rounded-full border ${getLevelColor(skill.level)}`}>
-                                                        {skill.level}
-                                                    </span>
+                                                    <div>
+                                                        <div className="font-semibold text-white text-sm">{skill.name}</div>
+                                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider">{skill.experiences}</div>
+                                                    </div>
                                                 </div>
-
-                                                {/* Progress Bar */}
-                                                <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-linear-to-r from-primary/50 to-cyan-400 transition-all duration-1000"
-                                                        style={{ width: `${proficiency}%` }}
-                                                    ></div>
-                                                </div>
+                                                <span className={`text-[9px] font-bold px-2 py-1 rounded-md border tracking-tighter ${getLevelColor(skill.level)}`}>
+                                                    {skill.level}
+                                                </span>
                                             </div>
-                                        );
-                                    })}
-                                </div>
+
+                                            {/* Progress Bar Container */}
+                                            <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                                                {/* Animated Progress Fill */}
+                                                <motion.div
+                                                    initial={{ width: 0 }}
+                                                    whileInView={{ width: `${proficiency}%` }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 1.5, ease: "circOut", delay: 0.2 }}
+                                                    className="h-full bg-gradient-to-r from-primary via-cyan-400 to-primary/80 rounded-full"
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
-                        </ >
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
