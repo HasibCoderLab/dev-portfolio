@@ -152,12 +152,12 @@ const Hero = () => {
           onClick={() => scrollToSection("about")}
           className="group flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-white transition-colors"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70 group-hover:opacity-100">Scroll</span>
+         
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-5 h-5" />
+            
           </motion.div>
         </motion.button>
       </div>
