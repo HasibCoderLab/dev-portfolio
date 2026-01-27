@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
-import { ChevronDown } from "lucide-react";
 import { STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import RadialGradientBackground from "../background/RadialGradientBackground";
@@ -19,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    // 'pt-32' add kora hoyeche jate Navbar-er nich theke gap thake
+    // 'pt-32'jate Navbar-er nich theke gap thake
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#030712] pt-32 pb-20 lg:pt-40 lg:pb-0">
       {/* Radial Background Glows */}
       <RadialGradientBackground variant="hero" />
@@ -144,7 +143,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator - Bottom fix */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -160,7 +159,7 @@ const Hero = () => {
             
           </motion.div>
         </motion.button>
-      </div>
+      </div> */}
 
       {/* Decorative Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />

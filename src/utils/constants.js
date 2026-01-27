@@ -1,10 +1,11 @@
 export const PERSONAL_INFO = {
   name: "Mohammad Hasib Hasan",
   title: "Frontend Developer  </>| Full-Stack Next.js Developer",
-  email: "coder.mohammadhasibhasan@gmail.com",
+  email: "coderhasibh@gmail.com",
   location: "Rajshahi, Bangladesh",
   tagline: "Building modern, fast, and user-friendly web experiences",
   resume:'/',
+  icon:"/public/favicon.png",
 bio: [
   "I am a Frontend Developer with a strong interest in building web applications that work efficiently and reliably. I focus on writing clean and organized code that is easy to maintain and understand.",
 
