@@ -114,7 +114,7 @@ const Hero = () => {
               <div className="relative overflow-hidden rounded-3xl max-w-[450px] bg-white/[0.03] border border-white/10 p-2 backdrop-blur-md">
                 <div className="rounded-2xl overflow-hidden aspect-square">
                   <img
-                    src="/developer.png"
+                    src="/Hasib-Hasan.png"
                     alt="Hasib Hasan"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
