@@ -1,4 +1,5 @@
 import React from "react";
+import profileImg from "../../assets/img/Hasib-Hasan.png";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
@@ -16,6 +17,7 @@ const Hero = () => {
       transition: { delay: custom * 0.2, duration: 0.8, ease: "easeOut" },
     }),
   };
+  
 
   return (
     // 'pt-32'jate Navbar-er nich theke gap thake
@@ -114,7 +116,7 @@ const Hero = () => {
               <div className="relative overflow-hidden rounded-3xl max-w-[450px] bg-white/[0.03] border border-white/10 p-2 backdrop-blur-md">
                 <div className="rounded-2xl overflow-hidden aspect-square">
                   <img
-                    src="/Hasib-Hasan.png"
+                    src={profileImg}
                     alt="Hasib Hasan"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
