@@ -53,44 +53,53 @@ const Skills = () => {
                             </h3>
 
                             <div className="space-y-10">
-                                {skills.filter(s => s.category === catName).map((skill) => {
-                                    const Icon = skill.icon;
-                                    return (
-                                        <div key={skill.id} className="group">
-                                            <div className="flex items-center justify-between mb-4">
-                                                <div className="flex items-center gap-4">
-                                                    {/* Icon Box */}
-                                                    <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
-                                                        <Icon size={28} className="text-gray-300 group-hover:text-[#8DFF69] transition-colors" />
-                                                    </div>
-                                                    {/* Name & Experience */}
-                                                    <div>
-                                                        <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors leading-tight">
-                                                            {skill.name}
-                                                        </h4>
-                                                        <p className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">
-                                                            {skill.experience || '2+ YEARS'}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                {/* Level Badge */}
-                                                <span className={`text-[10px] font-medium px-3 py-1 rounded-lg border ${getLevelColor(skill.level)}`}>
-                                                    {skill.level}
-                                                </span>
-                                            </div>
+                               {skills.filter(s => s.category === catName).map((skill) => {
+    const Icon = skill.icon;
+    return (
+        <div key={skill.id} className="group">
+            <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                    {/* Icon Box */}
+                    <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-white/30 transition-colors">
+                        {/* use  skill.color  */}
+                        <Icon 
+                            size={28} 
+                            style={{ color: skill.color }} 
+                            className="opacity-80 group-hover:opacity-100 transition-opacity" 
+                        />
+                    </div>
+                    
+                    {/* Name & Experience */}
+                    <div>
+                        <h4 className="text-lg font-bold text-white group-hover:text-white transition-colors leading-tight">
+                            {skill.name}
+                        </h4>
+                        <p className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">
+                            {skill.experiences || '2+ YEARS'}
+                        </p>
+                    </div>
+                </div>
+                
+                {/* Level Badge */}
+                <span className={`text-[10px] font-medium px-3 py-1 rounded-lg border ${getLevelColor(skill.level)}`}>
+                    {skill.level}
+                </span>
+            </div>
 
-                                            {/* Progress Bar */}
-                                            <div className="h-[6px] w-full bg-white/5 rounded-full overflow-hidden">
-                                                <motion.div 
-                                                    initial={{ width: 0 }}
-                                                    whileInView={{ width: `${getProficiencyLevel(skill.level)}%` }}
-                                                    transition={{ duration: 1.5, ease: "circOut" }}
-                                                    className="h-full bg-gradient-to-r from-[#8DFF69] via-cyan-400 to-transparent rounded-full shadow-[0_0_15px_rgba(141,255,105,0.3)]"
-                                                />
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+            {/* Progress Bar */}
+            <div className="h-[6px] w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${getProficiencyLevel(skill.level)}%` }}
+                    transition={{ duration: 1.5, ease: "circOut" }}
+                    // প্রগ্রেস বারের কালারও স্কিলের কালার অনুযায়ী পরিবর্তন করতে পারেন
+                    style={{ backgroundColor: skill.color }}
+                    className="h-full rounded-full opacity-70"
+                />
+            </div>
+        </div>
+    );
+})}
                             </div>
                         </motion.div>
                     ))}
