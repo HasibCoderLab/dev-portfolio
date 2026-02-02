@@ -1,7 +1,8 @@
 import {
-  SiReact, SiJavascript, SiTypescript, SiNextdotjs, SiTailwindcss, SiRedux,
-  SiNodedotjs, SiExpress, SiMongodb, SiPrisma, SiPostman, SiGit,
-  SiGithub, SiVercel, SiLinux, SiVite, SiCanva, SiJsonwebtokens, SiFirebase
+ SiReact, SiJavascript, SiTypescript, SiNextdotjs, SiTailwindcss, SiRedux, 
+  SiNodedotjs, SiExpress, SiMongodb, SiPrisma, SiPostman, SiGit, 
+  SiGithub, SiVercel, SiLinux, SiVite, SiCanva, SiJsonwebtokens, SiFirebase,
+  SiNetlify
 } from "react-icons/si";
 import { FaServer, FaDatabase } from "react-icons/fa";
 
@@ -88,4 +89,6 @@ export const skills = [
   },
   { id: 23, name: "Vite", icon: SiVite, color: "#646CFF", level: "Intermediate", experiences: "1+ Years", category: "Tools" },
   { id: 24, name: "Canva", color: "#00C4CC", icon: SiCanva, level: "Expert", experiences: "3+ Year", category: "Tools" },
+  { id: 25, name: "Linux", icon: SiLinux, color: "#FCC624", level: "Intermediate", experiences: "1+ Year", category: "Tools" },
+  { id: 26, name: "Netlify", icon: SiNetlify, color: "#00AD9F", level: "Advanced", experiences: "1+ Year", category: "Tools" },
 ];
