@@ -1,9 +1,10 @@
+import project3 from "../assets/images/projects/project3.png"
 export const projects = [
   {
     id: 1,
     title: "RGB Color Generator with TS",
     description: "Generate random RGB colors using TypeScript",
-    image: "/images/projects/project1.png",
+    image: project3,
     category: "TypeScript",
     technologies: ["HTML", "CSS", "TypeScript"],
     metrics: "Mini Project",
