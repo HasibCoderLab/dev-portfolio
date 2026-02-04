@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, Sparkles, Target, Globe, Palette, Zap } from "lucide-react";
+import { Briefcase, Target , } from "lucide-react";
 import { SiTypescript } from "react-icons/si";
-import { FaJsSquare,FaFileCode,FaReact   } from "react-icons/fa";
+import { FaJsSquare,FaFileCode,FaReact,FaInfinity    } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { projects, categories } from '../../data/projects';
 import ProjectCard from '../ui/ProjectCard';
@@ -15,7 +15,7 @@ const Projects = () => {
         : projects.filter(project => project.category === activeCategory);
 
     const categoryIcons = {
-        'All': Target,
+        'All': FaInfinity ,
         'JavaScript': FaJsSquare,
         'TypeScript': SiTypescript,
         'Frontend': FaFileCode ,
