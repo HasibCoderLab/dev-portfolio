@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../../assets/img/Hasib-Hasan.png";
+import profileImg from "../../assets/images/Hasib-Hasan.png";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from "react-icons/si";
