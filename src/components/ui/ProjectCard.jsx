@@ -14,83 +14,80 @@ const ProjectCard = ({ project }) => {
   } = project;
 
   return (
-    <div className="group flex flex-col md:flex-row bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 w-full min-h-[350px] shadow-2xl">
+    <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
       
-      {/* IMAGE SIDE (Left on Desktop) */}
-      <div className="relative w-full md:w-2/5 overflow-hidden">
+      {/* IMAGE */}
+      <div className="relative h-56 overflow-hidden">
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        {/* Overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 md:bg-gradient-to-r md:from-black/40 to-transparent" />
-        
-        {/* CATEGORY BADGE */}
+
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
+
+        {/* CATEGORY */}
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 text-[10px] font-bold tracking-widest text-white bg-primary/80 backdrop-blur-md rounded-full uppercase">
+          <span className="px-3 py-1 text-sm text-white bg-black/40 rounded-full">
             {category}
           </span>
         </div>
+
+        {/* LINKS */}
+        <div className="absolute bottom-4 right-4 flex items-center gap-3">
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Demo"
+              className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300"
+            >
+              <ExternalLink className="w-4 h-4 text-white" />
+            </a>
+          )}
+
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Code"
+              className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300"
+            >
+              <Github className="w-4 h-4 text-white" />
+            </a>
+          )}
+        </div>
       </div>
 
-      {/* CONTENT SIDE (Right on Desktop) */}
-      <div className="p-8 md:w-3/5 flex flex-col justify-center space-y-5">
-        <div className="flex justify-between items-start">
-          <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">
-            {title}
-          </h3>
-          
-          {/* EXTERNAL LINKS */}
-          <div className="flex items-center gap-3">
-            {githubUrl && (
-              <a 
-                href={githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="p-2.5 bg-white/5 rounded-xl border border-white/10 hover:bg-primary/20 hover:border-primary/40 text-white transition-all"
-                title="Source Code"
-              >
-                <Github size={20} />
-              </a>
-            )}
-            {demoUrl && (
-              <a 
-                href={demoUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="p-2.5 bg-white/5 rounded-xl border border-white/10 hover:bg-primary/20 hover:border-primary/40 text-white transition-all"
-                title="Live Demo"
-              >
-                <ExternalLink size={20} />
-              </a>
-            )}
-          </div>
-        </div>
+      {/* CONTENT */}
+      <div className="p-6 space-y-4">
+        <h3 className="text-xl font-semibold text-white group-hover:text-[#A8FF8D] transition-colors">
+          {title}
+        </h3>
 
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed line-clamp-3">
+        <p className="text-white/60 text-sm line-clamp-2">
           {description}
         </p>
 
-        {/* TECH STACK */}
+        {/* TECHNOLOGIES */}
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
-            <span 
-              key={index} 
-              className="px-3 py-1 text-[11px] font-semibold text-primary/90 border border-primary/20 bg-primary/5 rounded-lg uppercase tracking-wider"
+            <span
+              key={index}
+              className="px-3 py-1 text-xs text-primary border border-white/20 rounded-lg"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* PERFORMANCE METRICS */}
+        {/* METRICS */}
         {metrics && (
-          <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-            <div className="p-1.5 bg-green-500/10 rounded-lg">
-                <TrendingUp className="w-4 h-4 text-green-400" />
-            </div>
-            <span className="text-sm font-medium text-green-400/90 italic">{metrics}</span>
+          <div className="flex items-center gap-2 pt-3 border-t border-white/10">
+            <TrendingUp className="w-4 h-4 text-primary" />
+            <span className="text-sm text-green-400">{metrics}</span>
           </div>
         )}
       </div>
