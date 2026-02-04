@@ -1,43 +1,48 @@
-import project3 from "../assets/images/projects/project3.png"
+import tsRgb from "../assets/images/projects/ts-rgb.png"
+import jsRgb from "../assets/images/projects/js-rgb.png"
+import portfolioWeb from "../assets/images/projects/portfolio-web.png"
+import NextJs from "../assets/images/projects/Next-js.png"
+
+
 export const projects = [
   {
     id: 1,
     title: "RGB Color Generator with TS",
     description: "Generate random RGB colors using TypeScript",
-    image: project3,
+    image: tsRgb,
     category: "TypeScript",
     technologies: ["HTML", "CSS", "TypeScript"],
     metrics: "Mini Project",
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://rgb-color-generator-with-ts.vercel.app/",
+    githubUrl: "https://github.com/HasibCoderLab/rgb-color-generator-with-ts",
   },
   {
     id: 2,
-    title: "Todo App",
-    description: "Simple todo app with local storage",
-    image: "/images/projects/project2.png",
+    title: "RGB Color Generator with JS",
+    description: "Generate random RGB colors using JavaScript",
+    image:jsRgb,
     category: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript"],
-    metrics: "CRUD",
-    demoUrl: "#",
-    githubUrl: "#",
+    metrics: "Mini-Project",
+    demoUrl: "https://rgb-color-generator-eight.vercel.app/",
+    githubUrl: "https://github.com/HasibCoderLab/rgb-color-generator",
   },
   {
     id: 3,
     title: "Portfolio Website",
     description: "Personal portfolio website",
-    image: "/images/projects/project3.png",
+    image: portfolioWeb,
     category: "Frontend",
     technologies: ["HTML", "CSS", "JavaScript"],
     metrics: "Responsive",
     demoUrl: "https://coderhasib.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/HasibCoderLab/coderhasib-portfolio",
   },
   {
     id: 4,
     title: "Next.js Landing Page",
     description: "Landing page built with Next.js",
-    image: "/images/projects/project4.png",
+    image: NextJs,
     category: "Next.js",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     metrics: "SEO Ready",
@@ -74,4 +79,5 @@ export const categories= [
   "TypeScript",
   "Frontend",
   "Next.js",
+  "React"
 ];
