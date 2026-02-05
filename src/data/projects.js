@@ -7,7 +7,6 @@ import TravelGuide from "../assets/images/projects/travel-guide.png";
 import reactPortfolio from "../assets/images/projects/react-portfolio.png";
 import restaurantWebsite from "../assets/images/projects/restaurant-website.png";
 
-
 export const projects = [
   {
     id: 1,
