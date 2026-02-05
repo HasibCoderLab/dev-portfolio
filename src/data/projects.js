@@ -2,11 +2,11 @@ import tsRgb from "../assets/images/projects/ts-rgb.png";
 import jsRgb from "../assets/images/projects/js-rgb.png";
 import portfolioWeb from "../assets/images/projects/portfolio-web.png";
 import NextJs from "../assets/images/projects/Next-js.png";
-import ELearning from "../assets/images/projects/E-Learning.png";
-import TravelGuide from "../assets/images/projects/Travel-Guide.png";
+import ELearning from "../assets/images/projects/e-learning.png";
+import TravelGuide from "../assets/images/projects/travel-guide.png";
 import reactPortfolio from "../assets/images/projects/react-portfolio.png";
 import restaurantWebsite from "../assets/images/projects/restaurant-website.png";
-import funProject from "../assets/images/projects/fun-project.png";
+
 
 export const projects = [
   {

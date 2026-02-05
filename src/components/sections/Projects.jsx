@@ -11,7 +11,7 @@ const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const filteredProjects =
+  const filteredProjects = 
     activeCategory === "All"
       ? projects
       : projects.filter((p) => p.category === activeCategory);
