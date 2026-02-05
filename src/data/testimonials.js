@@ -1,6 +1,7 @@
 import amanPic from "../assets/images/t-image/aman.jpg"
 import shantoPic from "../assets/images/t-image/shanto.jpg"
 import sarminPic from "../assets/images/t-image/sarmin.jpg"
+import somikPic from "../assets/images/t-image/somikPic.jpg"
 export const testimonials = [
   {
     id: 1,
@@ -34,7 +35,7 @@ export const testimonials = [
     name: "Md. Imdadul Haque Somik ",
     role: "CSE Student",
     institution: "Rajshahi University of Engineering & Technology (RUET)",
-    image: "/images/projects/project3.png",
+    image: somikPic,
     quote: "Hardworking developer with strong problem-solving skills.",
     rating: 5,
   },
