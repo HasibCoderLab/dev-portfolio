@@ -21,16 +21,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 mt-4 md:mt-8 px-4`}>
-      <div className={`max-w-7xl mx-auto flex items-center justify-between transition-all duration-300 ${
+    
+
+         <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 mt-4 md:mt-8 px-4 w-full`}>
+      {/* Main Conteiner justify-center 100% */}
+      <div className={`max-w-7xl mx-auto flex items-center justify-center lg:justify-between transition-all duration-300 ${
         isScrolled ? 'px-4' : 'px-0'
       }`}>
         
-        {/* Left Side: Empty/Spacer for balance (Desktop) */}
+        {/* Left Side Spacer - just Desktop */}
         <div className="hidden lg:block w-[180px]"></div>
 
-        {/* Center: Integrated Logo & Navigation (Bigger Pill) */}
-        <div className={`flex items-center gap-3 p-2 rounded-full border border-white/10 backdrop-blur-2xl transition-all duration-500 ${
+        {/* Center Pill - Main Focus on Mobile  */}
+        <div className={`flex items-center gap-3 p-2 rounded-full border border-white/10 backdrop-blur-2xl transition-all duration-500 mx-auto lg:mx-0 ${
           isScrolled ? 'bg-black/70 shadow-2xl shadow-primary/20 scale-105' : 'bg-white/5'
         }`}>
           
@@ -82,7 +85,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Right Side: Hire Me Button (Bigger) */}
+        {/* Right Side: Hire Me Button */}
         <div className="hidden lg:block w-[180px] text-right">
           <button
             onClick={() => handleNavClick('contact')}
@@ -93,7 +96,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
