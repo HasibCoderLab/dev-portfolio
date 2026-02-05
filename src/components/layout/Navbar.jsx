@@ -42,11 +42,11 @@ const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-3 pl-4 pr-6 py-2 border-r border-white/10 cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-inner">
+            <div className="w-11 h-11 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-inner">
               <img 
                 src={PERSONAL_INFO.icon} 
                 alt="Logo" 
-                className="w-6 h-6 object-contain"
+                className="w-9 h-9 object-contain"
               />
             </div>
             <span className="text-white font-black tracking-tighter text-base">
