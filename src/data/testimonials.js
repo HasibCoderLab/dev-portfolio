@@ -10,7 +10,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Bappay Hasan",
+    name: "Md. Imdadul Haque Somik ",
     role: "CSE Student",
     institution: "Rajshahi University of Engineering & Technology (RUET)",
     image: "/images/projects/project3.png",
@@ -30,7 +30,7 @@ export const testimonials = [
     id: 4,
     name: "Mahfizur Rahman Shanto",
     role: "Junior Developer",
-    institution: "Self-Employed",
+    institution: "Metropolitan University Bangladesh",
     image: "/images/projects/project3.png",
     quote: "Clean code, great UI sense, and professional mindset.",
     rating: 5,
