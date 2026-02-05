@@ -50,7 +50,7 @@ const Navbar = () => {
               />
             </div>
             <span className="text-white font-black tracking-tighter text-base">
-              HASIB<span className="text-primary">.</span>
+              HASIB<span> 😊</span>
             </span>
           </motion.div>
 
