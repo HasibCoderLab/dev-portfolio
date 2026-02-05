@@ -41,7 +41,7 @@ export const testimonials = [
     quote: "Reliable and creative developer with strong frontend skills.",
     rating: 4,
   },
-             
+
   {
     id: 5,
     name: "Hasan Sarker",
@@ -51,14 +51,15 @@ export const testimonials = [
     quote: "Shows excellent growth and commitment to learning.",
     rating: 5,
   },
-   {
+  {
     id: 6,
     name: "Dr. G.K.M. Hasanuzzaman",
     role: " Professor of EEE",
     institution: "Rajshahi University of Engineering & Technology (RUET)",
     image: gkmSir,
-    quote: "Shows excellent growth and commitment to learning.",
+    quote: "A disciplined, sincere, and highly motivated learner with strong ethical values and a clear passion for engineering and technology.",
+
     rating: 5,
   }
-  
+
 ];
