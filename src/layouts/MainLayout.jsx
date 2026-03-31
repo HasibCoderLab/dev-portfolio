@@ -1,11 +1,13 @@
 import { Outlet } from "react-router"
 import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
+import SiteBackground from "../components/background/SiteBackground.jsx";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-[#010b17] text-white">
-      <Navbar />
+      <div className="relative">
+          <SiteBackground />
+          <Navbar />
       <main>
         <Outlet />
       </main>
