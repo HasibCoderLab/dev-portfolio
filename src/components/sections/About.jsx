@@ -326,16 +326,45 @@ const About = () => {
       <section
           id="about"
           ref={sectionRef}
-          className="relative py-28 overflow-hidden bg-[#030712]"
+          className="relative py-28 overflow-hidden"
       >
+        {/* ── Section-specific ambient glows (layered on top of SiteBackground) ── */}
+        <motion.div
+            className="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(141,255,105,0.07) 0%, transparent 70%)",
+              zIndex: 0,
+            }}
+            animate={{ scale: [1, 1.12, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+            className="absolute bottom-[-80px] right-[-80px] w-[550px] h-[550px] rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(97,218,251,0.07) 0%, transparent 70%)",
+              zIndex: 0,
+            }}
+            animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
+            transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+        <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(167,139,250,0.04) 0%, transparent 70%)",
+              zIndex: 0,
+            }}
+            animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        />
+
         {/* ── decorative corner lines ── */}
         <div
             className="absolute top-0 left-0 w-px h-48 pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(141,255,105,0.3), transparent)" }}
+            style={{ background: "linear-gradient(180deg, rgba(141,255,105,0.3), transparent)", zIndex: 1 }}
         />
         <div
             className="absolute top-0 right-0 w-px h-48 pointer-events-none"
-            style={{ background: "linear-gradient(180deg, rgba(97,218,251,0.2), transparent)" }}
+            style={{ background: "linear-gradient(180deg, rgba(97,218,251,0.2), transparent)", zIndex: 1 }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

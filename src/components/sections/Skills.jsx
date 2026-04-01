@@ -190,16 +190,7 @@ const SkillRow = ({ skill, index, inView, accent }) => {
                     </motion.div>
                 </div>
 
-                {/* percentage label */}
-                <motion.span
-                    className="absolute -top-5 right-0 text-[9px] font-mono font-bold"
-                    style={{ color: barColor }}
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: 0.1 * index + 1.1 }}
-                >
-                    {cfg.pct}%
-                </motion.span>
+
             </div>
         </motion.div>
     );
@@ -282,17 +273,16 @@ const CategoryCard = ({ cat, index, globalInView }) => {
                         </div>
                     </div>
 
-                    {/* avg ring */}
-                    <div className="flex-shrink-0 text-center">
-                        <div
-                            className="text-xl font-black font-mono"
-                            style={{ color: cat.accent }}
-                        >
-                            {avgPct}%
-                        </div>
-                        <div className="text-[9px] uppercase tracking-wider text-gray-600">
-                            avg
-                        </div>
+                    {/* skill count badge */}
+                    <div
+                        className="flex-shrink-0 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider"
+                        style={{
+                            background: `${cat.accent}15`,
+                            color: cat.accent,
+                            border: `1px solid ${cat.accent}30`,
+                        }}
+                    >
+                        {catSkills.length} skills
                     </div>
                 </div>
 
@@ -424,16 +414,45 @@ const Skills = () => {
         <section
             id="skills"
             ref={sectionRef}
-            className="relative py-28 overflow-hidden bg-[#030712]"
+            className="relative py-28 overflow-hidden"
         >
+            {/* ── Section-specific ambient glows (layered on top of SiteBackground) ── */}
+            <motion.div
+                className="absolute top-[-80px] right-[-80px] w-[600px] h-[600px] rounded-full pointer-events-none"
+                style={{
+                    background: "radial-gradient(circle, rgba(141,255,105,0.08) 0%, transparent 70%)",
+                    zIndex: 0,
+                }}
+                animate={{ scale: [1, 1.14, 1], opacity: [0.5, 0.9, 0.5] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+                className="absolute bottom-[-80px] left-[-60px] w-[500px] h-[500px] rounded-full pointer-events-none"
+                style={{
+                    background: "radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%)",
+                    zIndex: 0,
+                }}
+                animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.8, 0.4] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+            />
+            <motion.div
+                className="absolute top-1/2 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none"
+                style={{
+                    background: "radial-gradient(circle, rgba(97,218,251,0.05) 0%, transparent 70%)",
+                    zIndex: 0,
+                }}
+                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            />
+
             {/* ── decorative lines ── */}
             <div
                 className="absolute top-0 left-0 w-px h-40 pointer-events-none"
-                style={{ background: "linear-gradient(180deg, rgba(141,255,105,0.25), transparent)" }}
+                style={{ background: "linear-gradient(180deg, rgba(141,255,105,0.25), transparent)", zIndex: 1 }}
             />
             <div
                 className="absolute bottom-0 right-0 w-px h-40 pointer-events-none"
-                style={{ background: "linear-gradient(0deg, rgba(167,139,250,0.2), transparent)" }}
+                style={{ background: "linear-gradient(0deg, rgba(167,139,250,0.2), transparent)", zIndex: 1 }}
             />
 
             {/* ── diagonal accent line ── */}
