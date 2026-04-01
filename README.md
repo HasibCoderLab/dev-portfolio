@@ -9,7 +9,8 @@ dev-portfolio/
 │
 │   ├── components/
 │   │   ├── animations/         # framer-motion / gsap
-│   │   ├── background/         # background effects
+│   │   ├── background/  
+                ├── SiteBackground.jsx     # background effects
 │   │   ├── layout/             # small layout components
 │   │   │   ├── Navbar.jsx
 │   │   │   └── Footer.jsx
