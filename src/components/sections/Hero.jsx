@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import profileImg from "../../assets/images/Hasib-Hasan.png";
+import profileImg from "../../assets/images/Hasib-Hasan.webp";
 import {
     motion,
     useScroll,
